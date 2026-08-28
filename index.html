@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca Livski</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f5f1ea;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ANIMAÇÃO INICIAL */
+
+.loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:sumir 3s forwards;
+}
+
+.loader h1{
+    color:#fff;
+    font-size:3rem;
+    letter-spacing:4px;
+    font-family:'Cinzel', serif;
+    animation:aparecer 2s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(0.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes sumir{
+    0%,85%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://ci3.googleusercontent.com/meips/ADKq_NbJViFuQb4');
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+header h1{
+    font-size:5rem;
+    font-family:'Cinzel', serif;
+    margin-bottom:20px;
+}
+
+header p{
+    max-width:700px;
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:14px 30px;
+    border:none;
+    background:#c59b5f;
+    color:white;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.btn:hover{
+    background:#a67c43;
+    transform:scale(1.05);
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    background:#1b1b1b;
+    padding:15px;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c59b5f;
+}
+
+/* SECTIONS */
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:50px;
+    font-family:'Cinzel', serif;
+    color:#3a2d1f;
+}
+
+/* SOBRE */
+
+.sobre{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.sobre img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.sobre p{
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+/* ATRAÇÕES */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+/* LIVROS */
+
+.catalogo{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.livro{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.livro:hover{
+    transform:scale(1.03);
+}
+
+.livro img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.livro-info{
+    padding:20px;
+}
+
+.preco{
+    color:#2d7a32;
+    font-size:1.3rem;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+/* CONTATO */
+
+.contato{
+    background:#2b2118;
+    color:white;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+}
+
+.contato p{
+    margin:10px 0;
+    font-size:1.1rem;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+@media(max-width:900px){
+
+    header h1{
+        font-size:3rem;
+    }
+
+    .sobre{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="loader">
+    <h1>Biblioteca Livski</h1>
+</div>
+
+<header>
+    <h1>Biblioteca Livski</h1>
+
+    <p>
+        Um espaço mágico para amantes da literatura clássica brasileira e estrangeira.
+        Compre livros online, participe do clube do livro e viva uma experiência literária única.
+    </p>
+
+    <a href="#catalogo" class="btn">Explorar Livros</a>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#atracoes">Atrações</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+</nav>
+
+<section id="sobre">
+
+    <h2 class="section-title">Nossa Biblioteca</h2>
+
+    <div class="sobre">
+
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200">
+
+        <div>
+            <p>
+                A Biblioteca Livski nasceu com o sonho de tornar a literatura clássica acessível para todos.
+                Aqui você encontra obras de Fiódor Dostoiévski, Clarice Lispector, Machado de Assis,
+                Jorge Amado, Liev Tolstói e muitos outros autores consagrados.
+            </p>
+
+            <br>
+
+            <p>
+                Nosso diferencial está nos preços acessíveis, no ambiente aconchegante e nas experiências
+                culturais que oferecemos aos leitores.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="atracoes">
+
+    <h2 class="section-title">Atrações da Biblioteca</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200">
+
+            <div class="card-content">
+                <h3>Lanchonete Literária</h3>
+                <p>
+                    Cafés especiais, doces artesanais e um ambiente tranquilo para leitura.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200">
+
+            <div class="card-content">
+                <h3>Mesas para Leitura</h3>
+                <p>
+                    Espaços silenciosos e confortáveis para estudar ou aproveitar um bom livro.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200">
+
+            <div class="card-content">
+                <h3>Mesas Privadas</h3>
+                <p>
+                    Salas privativas com serviço de mesa, tomadas, internet e reservas por hora.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200">
+
+            <div class="card-content">
+                <h3>Clube do Livro</h3>
+                <p>
+                    Discussões literárias semanais, encontros culturais e debates sobre clássicos.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="catalogo">
+
+    <h2 class="section-title">Mini Catálogo</h2>
+
+    <div class="catalogo">
+
+        <div class="livro">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200">
+
+            <div class="livro-info">
+                <h3>Crime e Castigo</h3>
+                <p>Fiódor Dostoiévski</p>
+                <div class="preco">R$ 24,90</div>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+
+        <div class="livro">
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200">
+
+            <div class="livro-info">
+                <h3>A Hora da Estrela</h3>
+                <p>Clarice Lispector</p>
+                <div class="preco">R$ 19,90</div>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+
+        <div class="livro">
+            <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200">
+
+            <div class="livro-info">
+                <h3>Dom Casmurro</h3>
+                <p>Machado de Assis</p>
+                <div class="preco">R$ 17,90</div>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+
+        <div class="livro">
+            <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?q=80&w=1200">
+
+            <div class="livro-info">
+                <h3>Guerra e Paz</h3>
+                <p>Liev Tolstói</p>
+                <div class="preco">R$ 29,90</div>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+
+        <div class="livro">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200">
+
+            <div class="livro-info">
+                <h3>Capitães da Areia</h3>
+                <p>Jorge Amado</p>
+                <div class="preco">R$ 18,90</div>
+                <button class="btn">Comprar</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contato">
+
+    <div class="contato">
+
+        <h2 class="section-title" style="color:white;">Contato</h2>
+
+        <p>📍 Rua das Letras, 245 - Centro</p>
+        <p>📞 (12) 99999-9999</p>
+        <p>📧 contato@bibliotecalivski.com</p>
+        <p>🕒 Segunda à Sábado — 08h às 22h</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Biblioteca Livski — Todos os direitos reservados.
+</footer>
+
+<script>
+
+const botoes = document.querySelectorAll(".btn");
+
+botoes.forEach(botao => {
+    botao.addEventListener("mouseenter", () => {
+        botao.style.boxShadow = "0 0 20px rgba(197,155,95,0.8)";
+    });
+
+    botao.addEventListener("mouseleave", () => {
+        botao.style.boxShadow = "none";
+    });
+});
+
+</script>
+
+</body>
+</html>
