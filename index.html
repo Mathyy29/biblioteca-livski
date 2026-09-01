@@ -21,7 +21,27 @@ body{
     color:#222;
     overflow-x:hidden;
 }
+.carrinho-link{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+}
 
+#contadorCarrinho{
+    background:#c59b5f;
+    color:white;
+    font-size:0.75rem;
+    font-weight:bold;
+    min-width:20px;
+    height:20px;
+    padding:2px 6px;
+    border-radius:50%;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+}
+    
 /* ANIMAÇÃO INICIAL */
 
 .loader{
@@ -434,24 +454,24 @@ footer{
 
 
 <nav>
-
     <ul>
-
         <li><a href="#sobre">Sobre</a></li>
-
         <li><a href="#atracoes">Atrações</a></li>
-
         <li><a href="#catalogo">Catálogo</a></li>
-
         <li><a href="#faq">FAQ</a></li>
-
         <li><a href="#sac">SAC</a></li>
 
+        <li>
+            <a href="carrinho.html" class="carrinho-link">
+                🛒 Carrinho
+                <span id="contadorCarrinho">0</span>
+            </a>
+        </li>
+
         <li><a href="#contato">Contato</a></li>
-
     </ul>
-
 </nav>
+
 
 
 <!-- SOBRE -->
@@ -587,7 +607,14 @@ footer{
 
                 <div class="preco">R$ 34,90</div>
 
-                <button class="btn">Comprar</button>
+                <button class="btn" onclick="adicionarCarrinho(
+    'Crime e Castigo',
+    'Fiódor Dostoiévski',
+    34.90,
+    'imagens/crime e castigo.jpg'
+)">
+    Comprar
+</button>
 
             </div>
 
@@ -606,7 +633,14 @@ footer{
 
                 <div class="preco">R$ 24,90</div>
 
-                <button class="btn">Comprar</button>
+                <button class="btn" onclick="adicionarCarrinho(
+    'A Hora da Estrela',
+    'Clarice Lispector',
+    24.90,
+    'imagens/a hora da estrela.jpg'
+)">
+    Comprar
+</button>
 
             </div>
 
@@ -625,7 +659,14 @@ footer{
 
                 <div class="preco">R$ 19,90</div>
 
-                <button class="btn">Comprar</button>
+            <button class="btn" onclick="adicionarCarrinho(
+    'Dom Casmurro',
+    'Machado de Assis',
+    19.90,
+    'imagens/dom casmurro.jpg'
+)">
+    Comprar
+</button>
 
             </div>
 
@@ -644,7 +685,14 @@ footer{
 
                 <div class="preco">R$ 34,90</div>
 
-                <button class="btn">Comprar</button>
+                <<button class="btn" onclick="adicionarCarrinho(
+    'Oração para desaparecer',
+    'Socorro Acioli',
+    34.90,
+    'imagens/oração para desaparecer.jpg'
+)">
+    Comprar
+</button>
 
             </div>
 
@@ -663,7 +711,15 @@ footer{
 
                 <div class="preco">R$ 44,90</div>
 
-                <button class="btn">Comprar</button>
+                <button class="btn" onclick="adicionarCarrinho(
+    'Guerra e Paz',
+    'Liev Tolstói',
+    44.90,
+    'imagens/guerra e paz.jpg'
+)">
+    Comprar
+</button>
+
 
             </div>
 
@@ -682,7 +738,15 @@ footer{
 
                 <div class="preco">R$ 28,90</div>
 
-                <button class="btn">Comprar</button>
+                <button class="btn" onclick="adicionarCarrinho(
+    'Capitães da Areia',
+    'Jorge Amado',
+    28.90,
+    'imagens/capitães da areia.png'
+)">
+    Comprar
+</button>
+
 
             </div>
 
@@ -1014,6 +1078,93 @@ sacForm.addEventListener("submit", function(event){
     sacForm.reset();
 
 });
+
+    /* =========================
+   CARRINHO
+========================= */
+
+function adicionarCarrinho(nome, autor, preco, imagem){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+
+    let livroExistente =
+    carrinho.find(livro => livro.nome === nome);
+
+
+    if(livroExistente){
+
+        livroExistente.quantidade++;
+
+    }else{
+
+        carrinho.push({
+
+            nome: nome,
+
+            autor: autor,
+
+            preco: preco,
+
+            imagem: imagem,
+
+            quantidade: 1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+
+    atualizarContador();
+
+
+    alert(
+        nome +
+        " foi adicionado ao carrinho! 🛒"
+    );
+
+}
+
+
+/* CONTADOR */
+
+function atualizarContador(){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+
+    let quantidade = 0;
+
+
+    carrinho.forEach(livro => {
+
+        quantidade += livro.quantidade;
+
+    });
+
+
+    const contador =
+    document.getElementById("contadorCarrinho");
+
+
+    if(contador){
+
+        contador.textContent = quantidade;
+
+    }
+
+}
+
+
+atualizarContador();
 
 </script>
 
