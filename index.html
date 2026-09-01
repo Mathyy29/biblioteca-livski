@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    font-family:'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
     background:#f5f1ea;
     color:#222;
     overflow-x:hidden;
@@ -47,11 +47,12 @@ body{
     color:#fff;
     font-size:3rem;
     letter-spacing:4px;
-    font-family:'Cinzel', serif;
+    font-family:'Cinzel',serif;
     animation:aparecer 2s ease;
 }
 
 @keyframes aparecer{
+
     from{
         opacity:0;
         transform:scale(0.7);
@@ -61,9 +62,11 @@ body{
         opacity:1;
         transform:scale(1);
     }
+
 }
 
 @keyframes sumir{
+
     0%,85%{
         opacity:1;
     }
@@ -72,6 +75,7 @@ body{
         opacity:0;
         visibility:hidden;
     }
+
 }
 
 /* =========================
@@ -79,9 +83,13 @@ body{
 ========================= */
 
 header{
+
     background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000');
+    linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1600');
 
     background-size:cover;
     background-position:center;
@@ -94,20 +102,31 @@ header{
     align-items:center;
 
     text-align:center;
+
     color:white;
+
     padding:20px;
+
 }
 
 header h1{
+
     font-size:5rem;
-    font-family:'Cinzel', serif;
+
+    font-family:'Cinzel',serif;
+
     margin-bottom:20px;
+
 }
 
 header p{
+
     max-width:700px;
+
     font-size:1.2rem;
+
     margin-bottom:30px;
+
 }
 
 /* =========================
@@ -115,20 +134,35 @@ header p{
 ========================= */
 
 .btn{
+
+    display:inline-block;
+
     padding:14px 30px;
+
     border:none;
+
     background:#c59b5f;
+
     color:white;
+
     border-radius:30px;
+
     font-size:1rem;
+
     cursor:pointer;
+
     transition:0.3s;
+
     text-decoration:none;
+
 }
 
 .btn:hover{
+
     background:#a67c43;
+
     transform:scale(1.05);
+
 }
 
 /* =========================
@@ -136,28 +170,47 @@ header p{
 ========================= */
 
 nav{
+
     position:sticky;
+
     top:0;
+
     background:#1b1b1b;
+
     padding:15px;
+
     z-index:1000;
+
 }
 
 nav ul{
+
     display:flex;
+
     justify-content:center;
+
     gap:30px;
+
     list-style:none;
+
+    flex-wrap:wrap;
+
 }
 
 nav a{
+
     color:white;
+
     text-decoration:none;
+
     transition:0.3s;
+
 }
 
 nav a:hover{
+
     color:#c59b5f;
+
 }
 
 /* =========================
@@ -165,15 +218,23 @@ nav a:hover{
 ========================= */
 
 section{
+
     padding:80px 10%;
+
 }
 
 .section-title{
+
     text-align:center;
+
     font-size:2.8rem;
+
     margin-bottom:50px;
-    font-family:'Cinzel', serif;
+
+    font-family:'Cinzel',serif;
+
     color:#3a2d1f;
+
 }
 
 /* =========================
@@ -181,21 +242,33 @@ section{
 ========================= */
 
 .sobre{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:50px;
+
     align-items:center;
+
 }
 
 .sobre img{
+
     width:100%;
+
     border-radius:20px;
+
     box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
 }
 
 .sobre p{
+
     line-height:1.8;
+
     font-size:1.1rem;
+
 }
 
 /* =========================
@@ -203,35 +276,57 @@ section{
 ========================= */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
     gap:30px;
+
 }
 
 .card{
+
     background:white;
+
     border-radius:20px;
+
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,0.1);
+
     transition:0.4s;
+
 }
 
 .card:hover{
+
     transform:translateY(-10px);
+
 }
 
 .card img{
+
     width:100%;
+
     height:220px;
+
     object-fit:cover;
+
 }
 
 .card-content{
+
     padding:20px;
+
 }
 
 .card-content h3{
+
     margin-bottom:10px;
+
 }
 
 /* =========================
@@ -239,38 +334,63 @@ section{
 ========================= */
 
 .catalogo{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
     gap:30px;
+
 }
 
 .livro{
+
     background:white;
+
     border-radius:15px;
+
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
     transition:0.3s;
+
 }
 
 .livro:hover{
+
     transform:scale(1.03);
+
 }
 
 .livro img{
+
     width:100%;
+
     height:320px;
+
     object-fit:cover;
+
 }
 
 .livro-info{
+
     padding:20px;
+
 }
 
 .preco{
+
     color:#2d7a32;
+
     font-size:1.3rem;
+
     margin:10px 0;
+
     font-weight:bold;
+
 }
 
 /* =========================
@@ -278,35 +398,74 @@ section{
 ========================= */
 
 .faq{
+
     max-width:900px;
+
     margin:auto;
+
 }
 
 .faq-item{
+
     background:white;
+
     margin-bottom:15px;
+
     border-radius:12px;
+
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+
 }
 
-.faq-pergunta{
+.faq-question{
+
     width:100%;
-    padding:20px;
+
     border:none;
+
     background:white;
+
+    padding:20px;
+
     text-align:left;
-    font-size:1rem;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.05rem;
+
     font-weight:600;
+
     cursor:pointer;
+
     color:#3a2d1f;
+
 }
 
-.faq-resposta{
+.faq-question:hover{
+
+    background:#f3eadc;
+
+}
+
+.faq-answer{
+
     display:none;
+
     padding:0 20px 20px;
+
     line-height:1.7;
+
     color:#555;
+
+}
+
+.faq-answer.ativo{
+
+    display:block;
+
 }
 
 /* =========================
@@ -314,36 +473,72 @@ section{
 ========================= */
 
 .sac{
+
     max-width:800px;
+
     margin:auto;
+
     background:white;
+
     padding:40px;
+
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+.sac p{
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+    color:#555;
+
 }
 
 .sac form{
+
     display:flex;
+
     flex-direction:column;
+
     gap:15px;
+
 }
 
 .sac input,
 .sac textarea{
+
+    width:100%;
+
     padding:15px;
+
     border:1px solid #ddd;
+
     border-radius:10px;
-    font-family:'Poppins', sans-serif;
-    font-size:1rem;
+
+    font-family:'Poppins',sans-serif;
+
+    outline:none;
+
 }
 
 .sac textarea{
-    min-height:150px;
+
+    min-height:130px;
+
     resize:vertical;
+
 }
 
-.sac button{
-    align-self:flex-start;
+.sac input:focus,
+.sac textarea:focus{
+
+    border-color:#c59b5f;
+
 }
 
 /* =========================
@@ -351,16 +546,25 @@ section{
 ========================= */
 
 .contato{
+
     background:#2b2118;
+
     color:white;
+
     border-radius:20px;
+
     padding:50px;
+
     text-align:center;
+
 }
 
 .contato p{
+
     margin:10px 0;
+
     font-size:1.1rem;
+
 }
 
 /* =========================
@@ -368,58 +572,76 @@ section{
 ========================= */
 
 .carrinho-flutuante{
+
     position:fixed;
+
     right:25px;
+
     bottom:25px;
 
     width:65px;
+
     height:65px;
 
     background:#c59b5f;
-    color:white;
 
     border-radius:50%;
 
     display:flex;
-    align-items:center;
+
     justify-content:center;
 
-    font-size:30px;
+    align-items:center;
 
     text-decoration:none;
 
-    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    color:white;
+
+    font-size:30px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.3);
 
     z-index:5000;
 
     transition:0.3s;
+
 }
 
 .carrinho-flutuante:hover{
-    transform:scale(1.1);
+
     background:#a67c43;
+
+    transform:scale(1.1);
+
 }
 
-.contador-carrinho{
+.contador{
+
     position:absolute;
 
     top:-5px;
+
     right:-5px;
 
     width:25px;
+
     height:25px;
 
-    background:#b83232;
-    color:white;
+    background:#b52b2b;
 
     border-radius:50%;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     font-size:13px;
+
     font-weight:bold;
+
 }
 
 /* =========================
@@ -427,11 +649,17 @@ section{
 ========================= */
 
 footer{
+
     background:#111;
+
     color:#aaa;
+
     text-align:center;
+
     padding:20px;
+
     margin-top:50px;
+
 }
 
 /* =========================
@@ -441,20 +669,37 @@ footer{
 @media(max-width:900px){
 
     header h1{
+
         font-size:3rem;
+
     }
 
     .sobre{
+
         grid-template-columns:1fr;
+
     }
 
-    nav ul{
-        gap:15px;
-        flex-wrap:wrap;
-    }
+}
+
+@media(max-width:600px){
 
     section{
+
         padding:60px 5%;
+
+    }
+
+    .section-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .sac{
+
+        padding:25px;
+
     }
 
 }
@@ -467,7 +712,9 @@ footer{
 <!-- LOADER -->
 
 <div class="loader">
+
     <h1>Biblioteca Livski</h1>
+
 </div>
 
 
@@ -478,8 +725,11 @@ footer{
     <h1>Biblioteca Livski</h1>
 
     <p>
+
         Um espaço mágico para amantes da literatura clássica brasileira e estrangeira.
+
         Compre livros online, participe do clube do livro e viva uma experiência literária única.
+
     </p>
 
     <a href="#catalogo" class="btn">
@@ -539,17 +789,25 @@ footer{
         <div>
 
             <p>
+
                 A Biblioteca Livski nasceu com o sonho de tornar a literatura clássica acessível para todos.
+
                 Aqui você encontra obras de Fiódor Dostoiévski, Clarice Lispector, Machado de Assis,
+
                 Jorge Amado, Liev Tolstói e muitos outros autores consagrados.
+
             </p>
 
             <br>
 
             <p>
+
                 Nosso diferencial está nos preços acessíveis, no ambiente aconchegante e nas experiências
+
                 culturais que oferecemos aos leitores.
+
                 (Trabalho escolar sem fins comerciais)
+
             </p>
 
         </div>
@@ -581,7 +839,9 @@ footer{
                 </h3>
 
                 <p>
+
                     Cafés especiais, doces artesanais e um ambiente tranquilo para leitura.
+
                 </p>
 
             </div>
@@ -600,7 +860,9 @@ footer{
                 </h3>
 
                 <p>
+
                     Espaços silenciosos e confortáveis para estudar ou aproveitar um bom livro.
+
                 </p>
 
             </div>
@@ -619,7 +881,9 @@ footer{
                 </h3>
 
                 <p>
+
                     Salas privativas com serviço de mesa, tomadas, internet e reservas por hora.
+
                 </p>
 
             </div>
@@ -638,7 +902,9 @@ footer{
                 </h3>
 
                 <p>
+
                     Discussões literárias semanais, encontros culturais e debates sobre clássicos.
+
                 </p>
 
             </div>
@@ -658,7 +924,6 @@ footer{
     <h2 class="section-title">
         Mini Catálogo
     </h2>
-
 
     <div class="catalogo">
 
@@ -684,8 +949,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('Crime e Castigo','Fiódor Dostoiévski',34.90,'imagens/crime e castigo.jpg')">
+                    class="btn comprar"
+                    data-nome="Crime e Castigo"
+                    data-autor="Fiódor Dostoiévski"
+                    data-preco="34.90"
+                    data-imagem="imagens/crime e castigo.jpg">
 
                     Comprar
 
@@ -717,8 +985,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('A Hora da Estrela','Clarice Lispector',24.90,'imagens/a hora da estrela.jpg')">
+                    class="btn comprar"
+                    data-nome="A Hora da Estrela"
+                    data-autor="Clarice Lispector"
+                    data-preco="24.90"
+                    data-imagem="imagens/a hora da estrela.jpg">
 
                     Comprar
 
@@ -750,8 +1021,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('Dom Casmurro','Machado de Assis',19.90,'imagens/dom casmurro.jpg')">
+                    class="btn comprar"
+                    data-nome="Dom Casmurro"
+                    data-autor="Machado de Assis"
+                    data-preco="19.90"
+                    data-imagem="imagens/dom casmurro.jpg">
 
                     Comprar
 
@@ -783,8 +1057,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('Oração para desaparecer','Socorro Acioli',34.90,'imagens/oração para desaparecer.jpg')">
+                    class="btn comprar"
+                    data-nome="Oração para desaparecer"
+                    data-autor="Socorro Acioli"
+                    data-preco="34.90"
+                    data-imagem="imagens/oração para desaparecer.jpg">
 
                     Comprar
 
@@ -816,8 +1093,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('Guerra e Paz','Liev Tolstói',44.90,'imagens/guerra e paz.jpg')">
+                    class="btn comprar"
+                    data-nome="Guerra e Paz"
+                    data-autor="Liev Tolstói"
+                    data-preco="44.90"
+                    data-imagem="imagens/guerra e paz.jpg">
 
                     Comprar
 
@@ -849,8 +1129,11 @@ footer{
                 </div>
 
                 <button
-                    class="btn"
-                    onclick="adicionarCarrinho('Capitães da Areia','Jorge Amado',28.90,'imagens/capitães da areia.png')">
+                    class="btn comprar"
+                    data-nome="Capitães da Areia"
+                    data-autor="Jorge Amado"
+                    data-preco="28.90"
+                    data-imagem="imagens/capitães da areia.png">
 
                     Comprar
 
@@ -879,13 +1162,15 @@ footer{
 
         <div class="faq-item">
 
-            <button class="faq-pergunta">
+            <button class="faq-question">
                 Como posso comprar um livro?
             </button>
 
-            <div class="faq-resposta">
-                Basta escolher um livro no catálogo e clicar no botão "Comprar".
-                O livro será automaticamente adicionado ao seu carrinho.
+            <div class="faq-answer">
+
+                Escolha um livro no catálogo e clique no botão "Comprar".
+                O livro será automaticamente colocado no seu carrinho.
+
             </div>
 
         </div>
@@ -893,13 +1178,15 @@ footer{
 
         <div class="faq-item">
 
-            <button class="faq-pergunta">
+            <button class="faq-question">
                 Posso alterar a quantidade de livros?
             </button>
 
-            <div class="faq-resposta">
-                Sim. No carrinho você poderá aumentar ou diminuir a quantidade
-                de cada livro.
+            <div class="faq-answer">
+
+                Sim. No carrinho você pode aumentar ou diminuir a quantidade
+                de cada livro usando os botões + e -.
+
             </div>
 
         </div>
@@ -907,13 +1194,15 @@ footer{
 
         <div class="faq-item">
 
-            <button class="faq-pergunta">
-                Como acesso meu carrinho?
+            <button class="faq-question">
+                Como funciona o pagamento?
             </button>
 
-            <div class="faq-resposta">
-                Clique no ícone do carrinho localizado no canto inferior direito
-                da página.
+            <div class="faq-answer">
+
+                Após revisar seu carrinho, clique em "Finalizar Compra".
+                Você será direcionado para uma página de pagamento demonstrativa.
+
             </div>
 
         </div>
@@ -921,13 +1210,31 @@ footer{
 
         <div class="faq-item">
 
-            <button class="faq-pergunta">
-                A Biblioteca Livski é uma loja real?
+            <button class="faq-question">
+                A Biblioteca Livski realiza entregas?
             </button>
 
-            <div class="faq-resposta">
-                Não. Este site foi desenvolvido como um trabalho escolar
-                sem fins comerciais.
+            <div class="faq-answer">
+
+                Neste projeto escolar, a entrega é apenas uma representação
+                fictícia de como funcionaria uma loja de livros.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+                Posso participar do Clube do Livro?
+            </button>
+
+            <div class="faq-answer">
+
+                Sim. O Clube do Livro promove encontros, discussões literárias
+                e debates sobre diferentes obras.
+
             </div>
 
         </div>
@@ -948,25 +1255,29 @@ footer{
 
     <div class="sac">
 
-        <form onsubmit="enviarSAC(event)">
+        <p>
+
+            Precisa de ajuda? Entre em contato com o nosso SAC.
+            Preencha o formulário abaixo e envie sua mensagem.
+
+        </p>
+
+        <form id="formSAC">
 
             <input
                 type="text"
-                id="nome"
                 placeholder="Seu nome"
                 required
             >
 
             <input
                 type="email"
-                id="email"
                 placeholder="Seu e-mail"
                 required
             >
 
             <textarea
-                id="mensagem"
-                placeholder="Digite sua dúvida ou mensagem..."
+                placeholder="Digite sua mensagem"
                 required
             ></textarea>
 
@@ -1020,15 +1331,6 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
-
-<footer>
-
-    © 2026 Biblioteca Livski — Todos os direitos reservados.
-
-</footer>
-
-
 <!-- CARRINHO FLUTUANTE -->
 
 <a
@@ -1040,7 +1342,7 @@ footer{
     🛒
 
     <span
-        class="contador-carrinho"
+        class="contador"
         id="contadorCarrinho">
 
         0
@@ -1050,144 +1352,112 @@ footer{
 </a>
 
 
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Biblioteca Livski — Todos os direitos reservados.
+
+</footer>
+
+
 <script>
 
 /* =========================
    CARRINHO
 ========================= */
 
-function pegarCarrinho(){
-
-    return JSON.parse(
-        localStorage.getItem("carrinhoLivski")
-    ) || [];
-
-}
+let carrinho = JSON.parse(
+    localStorage.getItem("carrinhoLivski")
+) || [];
 
 
-function salvarCarrinho(carrinho){
-
-    localStorage.setItem(
-        "carrinhoLivski",
-        JSON.stringify(carrinho)
-    );
-
-}
-
-
-/* =========================
-   ADICIONAR LIVRO
-========================= */
-
-function adicionarCarrinho(
-    nome,
-    autor,
-    preco,
-    imagem
-){
-
-    let carrinho = pegarCarrinho();
-
-    const livroExistente = carrinho.find(
-        livro => livro.nome === nome
-    );
-
-
-    if(livroExistente){
-
-        livroExistente.quantidade++;
-
-    }else{
-
-        carrinho.push({
-
-            nome:nome,
-
-            autor:autor,
-
-            preco:preco,
-
-            imagem:imagem,
-
-            quantidade:1
-
-        });
-
-    }
-
-
-    salvarCarrinho(carrinho);
-
-    atualizarContador();
-
-
-    alert(
-        nome + " foi adicionado ao carrinho!"
-    );
-
-}
-
-
-/* =========================
-   CONTADOR
-========================= */
+/* ATUALIZAR CONTADOR */
 
 function atualizarContador(){
 
-    const carrinho = pegarCarrinho();
+    let total = 0;
 
-    let quantidadeTotal = 0;
+    carrinho.forEach(function(livro){
 
-
-    carrinho.forEach(livro => {
-
-        quantidadeTotal += livro.quantidade;
+        total += livro.quantidade;
 
     });
 
-
     document.getElementById(
         "contadorCarrinho"
-    ).textContent = quantidadeTotal;
+    ).textContent = total;
 
 }
 
 
-atualizarContador();
+/* ADICIONAR LIVRO */
+
+document.querySelectorAll(".comprar").forEach(function(botao){
+
+    botao.addEventListener("click",function(){
+
+        const nome = botao.dataset.nome;
+        const autor = botao.dataset.autor;
+        const preco = parseFloat(botao.dataset.preco);
+        const imagem = botao.dataset.imagem;
+
+
+        const livroExistente = carrinho.find(
+            livro => livro.nome === nome
+        );
+
+
+        if(livroExistente){
+
+            livroExistente.quantidade++;
+
+        }else{
+
+            carrinho.push({
+
+                nome:nome,
+
+                autor:autor,
+
+                preco:preco,
+
+                imagem:imagem,
+
+                quantidade:1
+
+            });
+
+        }
+
+
+        localStorage.setItem(
+            "carrinhoLivski",
+            JSON.stringify(carrinho)
+        );
+
+
+        atualizarContador();
+
+    });
+
+});
 
 
 /* =========================
    FAQ
 ========================= */
 
-const perguntas =
-document.querySelectorAll(".faq-pergunta");
+document.querySelectorAll(".faq-question").forEach(function(pergunta){
 
+    pergunta.addEventListener("click",function(){
 
-perguntas.forEach(pergunta => {
+        const resposta =
+            pergunta.nextElementSibling;
 
-    pergunta.addEventListener(
-        "click",
-        function(){
+        resposta.classList.toggle("ativo");
 
-            const resposta =
-            this.nextElementSibling;
-
-
-            if(
-                resposta.style.display === "block"
-            ){
-
-                resposta.style.display = "none";
-
-            }else{
-
-                resposta.style.display = "block";
-
-            }
-
-        }
-    );
+    });
 
 });
 
@@ -1196,25 +1466,23 @@ perguntas.forEach(pergunta => {
    SAC
 ========================= */
 
-function enviarSAC(event){
+document.getElementById("formSAC")
+.addEventListener("submit",function(event){
 
     event.preventDefault();
 
-
-    const nome =
-    document.getElementById("nome").value;
-
-
     alert(
-        "Obrigado, " +
-        nome +
-        "! Sua mensagem foi enviada."
+        "Mensagem enviada com sucesso! Obrigado por entrar em contato com a Biblioteca Livski."
     );
 
+    this.reset();
 
-    document.querySelector(".sac form").reset();
+});
 
-}
+
+/* CONTADOR INICIAL */
+
+atualizarContador();
 
 </script>
 
