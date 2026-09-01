@@ -17,13 +17,9 @@ rel="stylesheet">
 <style>
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
 
 body{
@@ -37,6 +33,9 @@ body{
     min-height:100vh;
 
 }
+
+
+/* HEADER */
 
 header{
 
@@ -58,6 +57,9 @@ header h1{
 
 }
 
+
+/* CONTAINER */
+
 .container{
 
     width:90%;
@@ -73,6 +75,7 @@ header h1{
     gap:30px;
 
 }
+
 
 /* RESUMO */
 
@@ -123,6 +126,7 @@ header h1{
     color:#d9b878;
 
 }
+
 
 /* PAGAMENTO */
 
@@ -185,6 +189,40 @@ select:focus{
 
 }
 
+
+/* CAMPOS DO CARTÃO */
+
+#dadosCartao{
+
+    display:none;
+
+    animation:aparecer .3s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* LINHA */
+
 .linha{
 
     display:grid;
@@ -194,6 +232,160 @@ select:focus{
     gap:15px;
 
 }
+
+
+/* PIX */
+
+#dadosPix{
+
+    display:none;
+
+    background:#f7f3ed;
+
+    border:1px solid #e2d7c8;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    animation:aparecer .3s ease;
+
+}
+
+#dadosPix h3{
+
+    font-family:'Cinzel',serif;
+
+    color:#3a2d1f;
+
+    margin-bottom:15px;
+
+}
+
+.qr{
+
+    width:160px;
+
+    height:160px;
+
+    margin:15px auto;
+
+    background:
+
+    repeating-linear-gradient(
+        45deg,
+        #111 0px,
+        #111 3px,
+        white 3px,
+        white 6px
+    );
+
+    border:10px solid white;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
+
+.codigoPix{
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    font-size:.75rem;
+
+    word-break:break-all;
+
+    margin-top:10px;
+
+}
+
+.aviso{
+
+    color:#777;
+
+    font-size:.8rem;
+
+    margin-top:10px;
+
+}
+
+
+/* BOLETO */
+
+#dadosBoleto{
+
+    display:none;
+
+    background:#f7f3ed;
+
+    border:1px solid #e2d7c8;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    animation:aparecer .3s ease;
+
+}
+
+#dadosBoleto h3{
+
+    font-family:'Cinzel',serif;
+
+    color:#3a2d1f;
+
+    margin-bottom:10px;
+
+}
+
+.codigoBarras{
+
+    height:55px;
+
+    margin-top:15px;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #111 0px,
+        #111 2px,
+        white 2px,
+        white 5px,
+        #111 5px,
+        #111 6px,
+        white 6px,
+        white 9px
+    );
+
+    border:5px solid white;
+
+}
+
+.numeroBoleto{
+
+    text-align:center;
+
+    font-size:.8rem;
+
+    margin-top:8px;
+
+    word-break:break-all;
+
+}
+
+
+/* BOTÕES */
 
 .btn{
 
@@ -213,7 +405,7 @@ select:focus{
 
     cursor:pointer;
 
-    transition:0.3s;
+    transition:.3s;
 
 }
 
@@ -239,11 +431,32 @@ select:focus{
 
 }
 
+
 /* SUCESSO */
+
+#areaSucesso{
+
+    display:none;
+
+    min-height:calc(100vh - 90px);
+
+    width:100%;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    margin:0;
+
+}
 
 .sucesso{
 
-    display:none;
+    width:100%;
+
+    max-width:600px;
 
     text-align:center;
 
@@ -275,6 +488,7 @@ select:focus{
     margin-bottom:25px;
 
 }
+
 
 /* RESPONSIVO */
 
@@ -310,6 +524,8 @@ select:focus{
 </header>
 
 
+<!-- ÁREA DA COMPRA -->
+
 <div class="container" id="areaCompra">
 
 
@@ -340,6 +556,7 @@ select:focus{
             Finalizar compra
         </h2>
 
+
         <form id="formPagamento">
 
 
@@ -349,6 +566,7 @@ select:focus{
 
             <input
                 type="text"
+                id="nome"
                 placeholder="Digite seu nome"
                 required>
 
@@ -359,6 +577,7 @@ select:focus{
 
             <input
                 type="email"
+                id="email"
                 placeholder="seuemail@email.com"
                 required>
 
@@ -367,75 +586,149 @@ select:focus{
                 Forma de pagamento
             </label>
 
-            <select required>
+            <select
+                id="formaPagamento"
+                required>
 
                 <option value="">
                     Selecione
                 </option>
 
-                <option>
+                <option value="credito">
                     Cartão de crédito
                 </option>
 
-                <option>
+                <option value="debito">
                     Cartão de débito
                 </option>
 
-                <option>
+                <option value="pix">
                     PIX
                 </option>
 
-                <option>
+                <option value="boleto">
                     Boleto
                 </option>
 
             </select>
 
 
-            <label>
-                Número do cartão
-            </label>
+            <!-- CARTÃO -->
 
-            <input
-                type="text"
-                maxlength="19"
-                placeholder="0000 0000 0000 0000">
+            <div id="dadosCartao">
 
+                <label>
+                    Número do cartão
+                </label>
 
-            <div class="linha">
-
-                <div>
-
-                    <label>
-                        Validade
-                    </label>
-
-                    <input
-                        type="text"
-                        placeholder="MM/AA">
-
-                </div>
+                <input
+                    type="text"
+                    id="numeroCartao"
+                    maxlength="19"
+                    placeholder="0000 0000 0000 0000">
 
 
-                <div>
+                <div class="linha">
 
-                    <label>
-                        CVV
-                    </label>
+                    <div>
 
-                    <input
-                        type="text"
-                        maxlength="3"
-                        placeholder="000">
+                        <label>
+                            Validade
+                        </label>
+
+                        <input
+                            type="text"
+                            id="validade"
+                            maxlength="5"
+                            placeholder="MM/AA">
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            CVV
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cvv"
+                            maxlength="3"
+                            placeholder="000">
+
+                    </div>
 
                 </div>
 
             </div>
 
 
+            <!-- PIX -->
+
+            <div id="dadosPix">
+
+                <h3>
+                    Pagamento via PIX
+                </h3>
+
+                <p>
+                    Escaneie o QR Code abaixo
+                    ou copie o código PIX.
+                </p>
+
+                <div class="qr"></div>
+
+                <strong>
+                    Código PIX
+                </strong>
+
+                <div
+                    class="codigoPix"
+                    id="codigoPix">
+
+                </div>
+
+                <p class="aviso">
+                    ⚠ Este PIX é fictício e serve
+                    apenas para demonstração.
+                </p>
+
+            </div>
+
+
+            <!-- BOLETO -->
+
+            <div id="dadosBoleto">
+
+                <h3>
+                    Boleto bancário
+                </h3>
+
+                <p>
+                    Seu boleto foi gerado
+                    para demonstração.
+                </p>
+
+                <div class="codigoBarras"></div>
+
+                <div
+                    class="numeroBoleto"
+                    id="numeroBoleto">
+
+                </div>
+
+                <p class="aviso">
+                    ⚠ Este boleto é fictício.
+                </p>
+
+            </div>
+
+
             <button
                 type="submit"
-                class="btn">
+                class="btn"
+                id="btnConfirmar">
 
                 Confirmar pagamento
 
@@ -462,18 +755,15 @@ select:focus{
 <!-- COMPRA FINALIZADA -->
 
 <div
-    class="container"
-    id="areaSucesso"
-    style="display:none;">
+    id="areaSucesso">
 
-    <div class="sucesso"
-         style="display:block;">
+    <div class="sucesso">
 
         <h2>
             ✓ Compra realizada!
         </h2>
 
-        <p>
+        <p id="mensagemSucesso">
             Seu pedido foi registrado com sucesso.
         </p>
 
@@ -497,6 +787,7 @@ select:focus{
 
 
 <script>
+
 
 /* PEGAR CARRINHO */
 
@@ -532,7 +823,6 @@ function mostrarProdutos(){
 
 
     produtos.innerHTML = "";
-
 
     let total = 0;
 
@@ -575,36 +865,305 @@ function mostrarProdutos(){
 }
 
 
+/* ELEMENTOS */
+
+const formaPagamento =
+    document.getElementById("formaPagamento");
+
+const dadosCartao =
+    document.getElementById("dadosCartao");
+
+const dadosPix =
+    document.getElementById("dadosPix");
+
+const dadosBoleto =
+    document.getElementById("dadosBoleto");
+
+const numeroCartao =
+    document.getElementById("numeroCartao");
+
+const validade =
+    document.getElementById("validade");
+
+const cvv =
+    document.getElementById("cvv");
+
+
+/* TROCAR FORMA DE PAGAMENTO */
+
+formaPagamento.addEventListener(
+    "change",
+    function(){
+
+        const forma = this.value;
+
+
+        /* ESCONDER TUDO */
+
+        dadosCartao.style.display = "none";
+
+        dadosPix.style.display = "none";
+
+        dadosBoleto.style.display = "none";
+
+
+        /* REMOVER REQUIRED */
+
+        numeroCartao.required = false;
+
+        validade.required = false;
+
+        cvv.required = false;
+
+
+        /* CARTÃO */
+
+        if(
+            forma === "credito" ||
+            forma === "debito"
+        ){
+
+            dadosCartao.style.display = "block";
+
+            numeroCartao.required = true;
+
+            validade.required = true;
+
+            cvv.required = true;
+
+        }
+
+
+        /* PIX */
+
+        else if(forma === "pix"){
+
+            dadosPix.style.display = "block";
+
+            gerarPix();
+
+        }
+
+
+        /* BOLETO */
+
+        else if(forma === "boleto"){
+
+            dadosBoleto.style.display = "block";
+
+            gerarBoleto();
+
+        }
+
+    }
+);
+
+
+/* MÁSCARA CARTÃO */
+
+numeroCartao.addEventListener(
+    "input",
+    function(){
+
+        let valor =
+            this.value.replace(/\D/g,"");
+
+        valor =
+            valor.substring(0,16);
+
+        valor =
+            valor.replace(
+                /(\d{4})(?=\d)/g,
+                "$1 "
+            );
+
+        this.value = valor;
+
+    }
+);
+
+
+/* MÁSCARA VALIDADE */
+
+validade.addEventListener(
+    "input",
+    function(){
+
+        let valor =
+            this.value.replace(/\D/g,"");
+
+        valor =
+            valor.substring(0,4);
+
+        if(valor.length >= 3){
+
+            valor =
+                valor.substring(0,2)
+                + "/" +
+                valor.substring(2);
+
+        }
+
+        this.value = valor;
+
+    }
+);
+
+
+/* MÁSCARA CVV */
+
+cvv.addEventListener(
+    "input",
+    function(){
+
+        this.value =
+            this.value
+            .replace(/\D/g,"")
+            .substring(0,3);
+
+    }
+);
+
+
+/* GERAR PIX FICTÍCIO */
+
+function gerarPix(){
+
+    const caracteres =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    let codigo = "";
+
+    for(
+        let i = 0;
+        i < 120;
+        i++
+    ){
+
+        codigo +=
+            caracteres.charAt(
+                Math.floor(
+                    Math.random() *
+                    caracteres.length
+                )
+            );
+
+    }
+
+
+    document.getElementById(
+        "codigoPix"
+    ).textContent =
+        "00020126580014BR.GOV.BCB.PIX01"
+        + codigo;
+
+}
+
+
+/* GERAR BOLETO FICTÍCIO */
+
+function gerarBoleto(){
+
+    let numero = "";
+
+    for(
+        let i = 0;
+        i < 47;
+        i++
+    ){
+
+        numero +=
+            Math.floor(
+                Math.random() * 10
+            );
+
+    }
+
+
+    document.getElementById(
+        "numeroBoleto"
+    ).textContent =
+        numero;
+
+}
+
+
 /* FORMULÁRIO */
 
 document
 .getElementById("formPagamento")
-.addEventListener("submit",function(event){
+.addEventListener(
+    "submit",
+    function(event){
 
-    event.preventDefault();
-
-
-    /*
-       NÃO existe pagamento real.
-       É somente uma simulação para o projeto.
-    */
+        event.preventDefault();
 
 
-    localStorage.removeItem(
-        "carrinhoLivski"
-    );
+        const forma =
+            formaPagamento.value;
 
 
-    document.getElementById(
-        "areaCompra"
-    ).style.display = "none";
+        let mensagem = "";
 
 
-    document.getElementById(
-        "areaSucesso"
-    ).style.display = "grid";
+        if(forma === "pix"){
 
-});
+            mensagem =
+                "Seu pagamento via PIX foi registrado com sucesso.";
+
+        }
+
+        else if(forma === "boleto"){
+
+            mensagem =
+                "Seu boleto foi gerado e o pedido foi registrado.";
+
+        }
+
+        else if(
+            forma === "credito" ||
+            forma === "debito"
+        ){
+
+            mensagem =
+                "Seu pagamento com cartão foi aprovado com sucesso.";
+
+        }
+
+
+        document.getElementById(
+            "mensagemSucesso"
+        ).textContent =
+            mensagem;
+
+
+        /*
+           NÃO existe pagamento real.
+           É somente uma simulação escolar.
+        */
+
+        localStorage.removeItem(
+            "carrinhoLivski"
+        );
+
+
+        document.getElementById(
+            "areaCompra"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "areaSucesso"
+        ).style.display = "flex";
+
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
 
 
 /* VOLTAR PARA CARRINHO */
