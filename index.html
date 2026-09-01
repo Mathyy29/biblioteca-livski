@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    font-family:'Poppins',sans-serif;
+    font-family:'Poppins', sans-serif;
     background:#f5f1ea;
     color:#222;
     overflow-x:hidden;
@@ -44,17 +44,17 @@ body{
 }
 
 .loader h1{
-    color:white;
+    color:#fff;
     font-size:3rem;
     letter-spacing:4px;
-    font-family:'Cinzel',serif;
+    font-family:'Cinzel', serif;
     animation:aparecer 2s ease;
 }
 
 @keyframes aparecer{
     from{
         opacity:0;
-        transform:scale(.7);
+        transform:scale(0.7);
     }
 
     to{
@@ -80,7 +80,7 @@ body{
 
 header{
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000');
 
     background-size:cover;
@@ -100,14 +100,13 @@ header{
 
 header h1{
     font-size:5rem;
-    font-family:'Cinzel',serif;
+    font-family:'Cinzel', serif;
     margin-bottom:20px;
 }
 
 header p{
     max-width:700px;
     font-size:1.2rem;
-    line-height:1.7;
     margin-bottom:30px;
 }
 
@@ -123,9 +122,8 @@ header p{
     border-radius:30px;
     font-size:1rem;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
     text-decoration:none;
-    display:inline-block;
 }
 
 .btn:hover{
@@ -155,7 +153,7 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
-    transition:.3s;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -174,7 +172,7 @@ section{
     text-align:center;
     font-size:2.8rem;
     margin-bottom:50px;
-    font-family:'Cinzel',serif;
+    font-family:'Cinzel', serif;
     color:#3a2d1f;
 }
 
@@ -192,7 +190,7 @@ section{
 .sobre img{
     width:100%;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .sobre p{
@@ -214,8 +212,8 @@ section{
     background:white;
     border-radius:20px;
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,.1);
-    transition:.4s;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
 }
 
 .card:hover{
@@ -250,12 +248,12 @@ section{
     background:white;
     border-radius:15px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
 .livro:hover{
-    transform:translateY(-5px);
+    transform:scale(1.03);
 }
 
 .livro img{
@@ -266,10 +264,6 @@ section{
 
 .livro-info{
     padding:20px;
-}
-
-.livro-info h3{
-    margin-bottom:5px;
 }
 
 .preco{
@@ -293,7 +287,7 @@ section{
     margin-bottom:15px;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .faq-pergunta{
@@ -302,19 +296,10 @@ section{
     border:none;
     background:white;
     text-align:left;
-    font-family:'Poppins',sans-serif;
     font-size:1rem;
     font-weight:600;
     cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     color:#3a2d1f;
-}
-
-.faq-pergunta span{
-    font-size:1.4rem;
-    color:#c59b5f;
 }
 
 .faq-resposta{
@@ -324,36 +309,31 @@ section{
     color:#555;
 }
 
-.faq-item.ativo .faq-resposta{
-    display:block;
-}
-
 /* =========================
    SAC
 ========================= */
 
 .sac{
-    max-width:900px;
+    max-width:800px;
     margin:auto;
-    background:#fff;
+    background:white;
     padding:40px;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .sac form{
-    display:grid;
+    display:flex;
+    flex-direction:column;
     gap:15px;
 }
 
 .sac input,
-.sac textarea,
-.sac select{
-    width:100%;
-    padding:14px;
+.sac textarea{
+    padding:15px;
     border:1px solid #ddd;
     border-radius:10px;
-    font-family:'Poppins',sans-serif;
+    font-family:'Poppins', sans-serif;
     font-size:1rem;
 }
 
@@ -362,11 +342,8 @@ section{
     resize:vertical;
 }
 
-.sac input:focus,
-.sac textarea:focus,
-.sac select:focus{
-    outline:none;
-    border-color:#c59b5f;
+.sac button{
+    align-self:flex-start;
 }
 
 /* =========================
@@ -379,10 +356,6 @@ section{
     border-radius:20px;
     padding:50px;
     text-align:center;
-}
-
-.contato h2{
-    color:white;
 }
 
 .contato p{
@@ -411,43 +384,42 @@ section{
     align-items:center;
     justify-content:center;
 
-    font-size:28px;
+    font-size:30px;
 
     text-decoration:none;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.3);
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
 
-    z-index:3000;
+    z-index:5000;
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .carrinho-flutuante:hover{
-    background:#a67c43;
     transform:scale(1.1);
+    background:#a67c43;
 }
 
 .contador-carrinho{
     position:absolute;
+
     top:-5px;
     right:-5px;
-
-    background:#b83232;
-    color:white;
 
     width:25px;
     height:25px;
 
+    background:#b83232;
+    color:white;
+
     border-radius:50%;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     font-size:13px;
     font-weight:bold;
-
-    border:2px solid white;
 }
 
 /* =========================
@@ -472,10 +444,6 @@ footer{
         font-size:3rem;
     }
 
-    header p{
-        font-size:1rem;
-    }
-
     .sobre{
         grid-template-columns:1fr;
     }
@@ -486,15 +454,7 @@ footer{
     }
 
     section{
-        padding:60px 6%;
-    }
-
-    .section-title{
-        font-size:2.2rem;
-    }
-
-    .sac{
-        padding:25px;
+        padding:60px 5%;
     }
 
 }
@@ -589,7 +549,7 @@ footer{
             <p>
                 Nosso diferencial está nos preços acessíveis, no ambiente aconchegante e nas experiências
                 culturais que oferecemos aos leitores.
-                <strong>(Trabalho escolar sem fins comerciais)</strong>
+                (Trabalho escolar sem fins comerciais)
             </p>
 
         </div>
@@ -609,13 +569,16 @@ footer{
 
     <div class="cards">
 
+
         <div class="card">
 
             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200">
 
             <div class="card-content">
 
-                <h3>Lanchonete Literária</h3>
+                <h3>
+                    Lanchonete Literária
+                </h3>
 
                 <p>
                     Cafés especiais, doces artesanais e um ambiente tranquilo para leitura.
@@ -632,7 +595,9 @@ footer{
 
             <div class="card-content">
 
-                <h3>Mesas para Leitura</h3>
+                <h3>
+                    Mesas para Leitura
+                </h3>
 
                 <p>
                     Espaços silenciosos e confortáveis para estudar ou aproveitar um bom livro.
@@ -649,7 +614,9 @@ footer{
 
             <div class="card-content">
 
-                <h3>Mesas Privadas</h3>
+                <h3>
+                    Mesas Privadas
+                </h3>
 
                 <p>
                     Salas privativas com serviço de mesa, tomadas, internet e reservas por hora.
@@ -666,7 +633,9 @@ footer{
 
             <div class="card-content">
 
-                <h3>Clube do Livro</h3>
+                <h3>
+                    Clube do Livro
+                </h3>
 
                 <p>
                     Discussões literárias semanais, encontros culturais e debates sobre clássicos.
@@ -675,6 +644,7 @@ footer{
             </div>
 
         </div>
+
 
     </div>
 
@@ -689,6 +659,7 @@ footer{
         Mini Catálogo
     </h2>
 
+
     <div class="catalogo">
 
 
@@ -700,19 +671,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>Crime e Castigo</h3>
+                <h3>
+                    Crime e Castigo
+                </h3>
 
-                <p>Fiódor Dostoiévski</p>
+                <p>
+                    Fiódor Dostoiévski
+                </p>
 
                 <div class="preco">
                     R$ 34,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="Crime e Castigo"
-                    data-autor="Fiódor Dostoiévski"
-                    data-preco="34.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('Crime e Castigo','Fiódor Dostoiévski',34.90,'imagens/crime e castigo.jpg')">
 
                     Comprar
 
@@ -731,19 +704,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>A Hora da Estrela</h3>
+                <h3>
+                    A Hora da Estrela
+                </h3>
 
-                <p>Clarice Lispector</p>
+                <p>
+                    Clarice Lispector
+                </p>
 
                 <div class="preco">
                     R$ 24,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="A Hora da Estrela"
-                    data-autor="Clarice Lispector"
-                    data-preco="24.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('A Hora da Estrela','Clarice Lispector',24.90,'imagens/a hora da estrela.jpg')">
 
                     Comprar
 
@@ -762,19 +737,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>Dom Casmurro</h3>
+                <h3>
+                    Dom Casmurro
+                </h3>
 
-                <p>Machado de Assis</p>
+                <p>
+                    Machado de Assis
+                </p>
 
                 <div class="preco">
                     R$ 19,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="Dom Casmurro"
-                    data-autor="Machado de Assis"
-                    data-preco="19.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('Dom Casmurro','Machado de Assis',19.90,'imagens/dom casmurro.jpg')">
 
                     Comprar
 
@@ -793,19 +770,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>Oração para Desaparecer</h3>
+                <h3>
+                    Oração para desaparecer
+                </h3>
 
-                <p>Socorro Acioli</p>
+                <p>
+                    Socorro Acioli
+                </p>
 
                 <div class="preco">
                     R$ 34,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="Oração para Desaparecer"
-                    data-autor="Socorro Acioli"
-                    data-preco="34.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('Oração para desaparecer','Socorro Acioli',34.90,'imagens/oração para desaparecer.jpg')">
 
                     Comprar
 
@@ -824,19 +803,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>Guerra e Paz</h3>
+                <h3>
+                    Guerra e Paz
+                </h3>
 
-                <p>Liev Tolstói</p>
+                <p>
+                    Liev Tolstói
+                </p>
 
                 <div class="preco">
                     R$ 44,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="Guerra e Paz"
-                    data-autor="Liev Tolstói"
-                    data-preco="44.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('Guerra e Paz','Liev Tolstói',44.90,'imagens/guerra e paz.jpg')">
 
                     Comprar
 
@@ -855,19 +836,21 @@ footer{
 
             <div class="livro-info">
 
-                <h3>Capitães da Areia</h3>
+                <h3>
+                    Capitães da Areia
+                </h3>
 
-                <p>Jorge Amado</p>
+                <p>
+                    Jorge Amado
+                </p>
 
                 <div class="preco">
                     R$ 28,90
                 </div>
 
                 <button
-                    class="btn comprar"
-                    data-nome="Capitães da Areia"
-                    data-autor="Jorge Amado"
-                    data-preco="28.90">
+                    class="btn"
+                    onclick="adicionarCarrinho('Capitães da Areia','Jorge Amado',28.90,'imagens/capitães da areia.png')">
 
                     Comprar
 
@@ -876,6 +859,7 @@ footer{
             </div>
 
         </div>
+
 
     </div>
 
@@ -897,12 +881,11 @@ footer{
 
             <button class="faq-pergunta">
                 Como posso comprar um livro?
-                <span>+</span>
             </button>
 
             <div class="faq-resposta">
-                Escolha um livro no catálogo e clique no botão "Comprar".
-                O livro será adicionado automaticamente ao seu carrinho.
+                Basta escolher um livro no catálogo e clicar no botão "Comprar".
+                O livro será automaticamente adicionado ao seu carrinho.
             </div>
 
         </div>
@@ -912,12 +895,11 @@ footer{
 
             <button class="faq-pergunta">
                 Posso alterar a quantidade de livros?
-                <span>+</span>
             </button>
 
             <div class="faq-resposta">
-                Sim. Dentro do carrinho você poderá aumentar ou diminuir
-                a quantidade de cada livro antes de finalizar o pedido.
+                Sim. No carrinho você poderá aumentar ou diminuir a quantidade
+                de cada livro.
             </div>
 
         </div>
@@ -926,13 +908,12 @@ footer{
         <div class="faq-item">
 
             <button class="faq-pergunta">
-                Como vejo meu carrinho?
-                <span>+</span>
+                Como acesso meu carrinho?
             </button>
 
             <div class="faq-resposta">
                 Clique no ícone do carrinho localizado no canto inferior direito
-                da página. Uma nova página será aberta mostrando seus produtos.
+                da página.
             </div>
 
         </div>
@@ -941,31 +922,16 @@ footer{
         <div class="faq-item">
 
             <button class="faq-pergunta">
-                Posso remover um livro do carrinho?
-                <span>+</span>
+                A Biblioteca Livski é uma loja real?
             </button>
 
             <div class="faq-resposta">
-                Sim. Na página do carrinho existe um botão para remover
-                cada produto individualmente.
+                Não. Este site foi desenvolvido como um trabalho escolar
+                sem fins comerciais.
             </div>
 
         </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-pergunta">
-                A Biblioteca Livski realiza vendas reais?
-                <span>+</span>
-            </button>
-
-            <div class="faq-resposta">
-                Não. Este site foi desenvolvido exclusivamente como
-                trabalho escolar e não realiza vendas reais.
-            </div>
-
-        </div>
 
     </div>
 
@@ -977,57 +943,32 @@ footer{
 <section id="sac">
 
     <h2 class="section-title">
-        SAC — Atendimento
+        Serviço de Atendimento ao Cliente
     </h2>
 
     <div class="sac">
 
-        <form id="formSac">
+        <form onsubmit="enviarSAC(event)">
 
             <input
                 type="text"
+                id="nome"
                 placeholder="Seu nome"
                 required
             >
 
             <input
                 type="email"
+                id="email"
                 placeholder="Seu e-mail"
                 required
             >
 
-            <select required>
-
-                <option value="">
-                    Selecione o assunto
-                </option>
-
-                <option>
-                    Dúvida sobre livros
-                </option>
-
-                <option>
-                    Problema com o carrinho
-                </option>
-
-                <option>
-                    Sugestão
-                </option>
-
-                <option>
-                    Reclamação
-                </option>
-
-                <option>
-                    Outro assunto
-                </option>
-
-            </select>
-
             <textarea
-                placeholder="Digite sua mensagem..."
-                required>
-            </textarea>
+                id="mensagem"
+                placeholder="Digite sua dúvida ou mensagem..."
+                required
+            ></textarea>
 
             <button
                 type="submit"
@@ -1050,21 +991,42 @@ footer{
 
     <div class="contato">
 
-        <h2 class="section-title">
+        <h2
+            class="section-title"
+            style="color:white;">
+
             Contato
+
         </h2>
 
-        <p>📍 Rua das Letras, 245 - Centro</p>
+        <p>
+            📍 Rua das Letras, 245 - Centro
+        </p>
 
-        <p>📞 (12) 99999-9999</p>
+        <p>
+            📞 (12) 99999-9999
+        </p>
 
-        <p>📧 contato@bibliotecalivski.com</p>
+        <p>
+            📧 contato@bibliotecalivski.com
+        </p>
 
-        <p>🕒 Segunda à Sábado — 08h às 22h</p>
+        <p>
+            🕒 Segunda à Sábado — 08h às 22h
+        </p>
 
     </div>
 
 </section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Biblioteca Livski — Todos os direitos reservados.
+
+</footer>
 
 
 <!-- CARRINHO FLUTUANTE -->
@@ -1088,125 +1050,144 @@ footer{
 </a>
 
 
-<!-- FOOTER -->
-
-<footer>
-
-    © 2026 Biblioteca Livski —
-    Trabalho escolar sem fins comerciais.
-
-</footer>
-
-
 <script>
 
 /* =========================
    CARRINHO
 ========================= */
 
-let carrinho = JSON.parse(localStorage.getItem("carrinhoLivski")) || [];
+function pegarCarrinho(){
 
-const contador = document.getElementById("contadorCarrinho");
-
-function atualizarContador(){
-
-    let quantidade = 0;
-
-    carrinho.forEach(produto => {
-        quantidade += produto.quantidade;
-    });
-
-    contador.textContent = quantidade;
+    return JSON.parse(
+        localStorage.getItem("carrinhoLivski")
+    ) || [];
 
 }
 
-function salvarCarrinho(){
+
+function salvarCarrinho(carrinho){
 
     localStorage.setItem(
         "carrinhoLivski",
         JSON.stringify(carrinho)
     );
 
+}
+
+
+/* =========================
+   ADICIONAR LIVRO
+========================= */
+
+function adicionarCarrinho(
+    nome,
+    autor,
+    preco,
+    imagem
+){
+
+    let carrinho = pegarCarrinho();
+
+    const livroExistente = carrinho.find(
+        livro => livro.nome === nome
+    );
+
+
+    if(livroExistente){
+
+        livroExistente.quantidade++;
+
+    }else{
+
+        carrinho.push({
+
+            nome:nome,
+
+            autor:autor,
+
+            preco:preco,
+
+            imagem:imagem,
+
+            quantidade:1
+
+        });
+
+    }
+
+
+    salvarCarrinho(carrinho);
+
     atualizarContador();
+
+
+    alert(
+        nome + " foi adicionado ao carrinho!"
+    );
 
 }
 
 
-/* BOTÕES COMPRAR */
+/* =========================
+   CONTADOR
+========================= */
 
-const botoesComprar = document.querySelectorAll(".comprar");
+function atualizarContador(){
 
-botoesComprar.forEach(botao => {
+    const carrinho = pegarCarrinho();
 
-    botao.addEventListener("click", function(){
+    let quantidadeTotal = 0;
 
-        const nome = this.dataset.nome;
-        const autor = this.dataset.autor;
-        const preco = Number(this.dataset.preco);
 
-        const produtoExistente = carrinho.find(
-            produto => produto.nome === nome
-        );
+    carrinho.forEach(livro => {
 
-        if(produtoExistente){
-
-            produtoExistente.quantidade++;
-
-        }else{
-
-            carrinho.push({
-
-                nome:nome,
-                autor:autor,
-                preco:preco,
-                quantidade:1
-
-            });
-
-        }
-
-        salvarCarrinho();
-
-        this.textContent = "✓ Adicionado!";
-
-        setTimeout(() => {
-
-            this.textContent = "Comprar";
-
-        },1000);
+        quantidadeTotal += livro.quantidade;
 
     });
 
-});
+
+    document.getElementById(
+        "contadorCarrinho"
+    ).textContent = quantidadeTotal;
+
+}
+
+
+atualizarContador();
 
 
 /* =========================
    FAQ
 ========================= */
 
-const perguntas = document.querySelectorAll(".faq-pergunta");
+const perguntas =
+document.querySelectorAll(".faq-pergunta");
+
 
 perguntas.forEach(pergunta => {
 
-    pergunta.addEventListener("click",function(){
+    pergunta.addEventListener(
+        "click",
+        function(){
 
-        const item = this.parentElement;
+            const resposta =
+            this.nextElementSibling;
 
-        item.classList.toggle("ativo");
 
-        const simbolo = this.querySelector("span");
+            if(
+                resposta.style.display === "block"
+            ){
 
-        if(item.classList.contains("ativo")){
+                resposta.style.display = "none";
 
-            simbolo.textContent = "−";
+            }else{
 
-        }else{
+                resposta.style.display = "block";
 
-            simbolo.textContent = "+";
+            }
 
         }
-
-    });
+    );
 
 });
 
@@ -1215,24 +1196,25 @@ perguntas.forEach(pergunta => {
    SAC
 ========================= */
 
-document.getElementById("formSac").addEventListener("submit",function(event){
+function enviarSAC(event){
 
     event.preventDefault();
 
+
+    const nome =
+    document.getElementById("nome").value;
+
+
     alert(
-        "Mensagem enviada com sucesso! Obrigado por entrar em contato com a Biblioteca Livski."
+        "Obrigado, " +
+        nome +
+        "! Sua mensagem foi enviada."
     );
 
-    this.reset();
 
-});
+    document.querySelector(".sac form").reset();
 
-
-/* =========================
-   CONTADOR INICIAL
-========================= */
-
-atualizarContador();
+}
 
 </script>
 
