@@ -5,11 +5,16 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <title>Carrinho - Biblioteca Livski</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
 
 <style>
 
@@ -20,214 +25,367 @@
 }
 
 body{
-    font-family:'Poppins',sans-serif;
+
+    font-family:'Poppins', sans-serif;
+
     background:#f5f1ea;
+
     color:#222;
+
 }
 
-/* CABEÇALHO */
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header{
+
     background:#1b1b1b;
+
     color:white;
-    padding:25px;
+
+    padding:30px;
+
     text-align:center;
+
 }
 
 header h1{
-    font-family:'Cinzel',serif;
-    font-size:2.5rem;
+
+    font-family:'Cinzel', serif;
+
+    font-size:3rem;
+
 }
 
-/* CONTAINER */
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-    width:90%;
+
     max-width:1000px;
+
     margin:50px auto;
+
+    padding:20px;
+
 }
 
-/* VOLTAR */
 
-.voltar{
-    display:inline-block;
-    margin-bottom:25px;
-    color:#8b683d;
-    text-decoration:none;
-    font-weight:500;
-}
+/* =========================
+   LIVRO DO CARRINHO
+========================= */
 
-.voltar:hover{
-    text-decoration:underline;
-}
+.item{
 
-/* CARRINHO */
-
-.carrinho{
     background:white;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
 
-.produto{
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
     display:flex;
+
     align-items:center;
-    gap:20px;
-    padding:20px 0;
-    border-bottom:1px solid #eee;
+
+    gap:25px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
 }
 
-.produto img{
+
+.item img{
+
     width:100px;
+
     height:140px;
+
     object-fit:cover;
-    border-radius:10px;
+
+    border-radius:8px;
+
 }
 
-.produto-info{
+
+.info{
+
     flex:1;
+
 }
 
-.produto-info h3{
-    font-family:'Cinzel',serif;
+
+.info h2{
+
     color:#3a2d1f;
+
+    margin-bottom:5px;
+
 }
+
 
 .autor{
+
     color:#777;
-    margin-top:5px;
+
+    margin-bottom:10px;
+
 }
+
 
 .preco{
+
     color:#2d7a32;
+
     font-weight:bold;
-    margin-top:8px;
+
+    font-size:1.2rem;
+
 }
 
-/* QUANTIDADE */
+
+/* =========================
+   QUANTIDADE
+========================= */
 
 .quantidade{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
+    margin-top:15px;
+
 }
+
 
 .quantidade button{
-    width:32px;
-    height:32px;
+
+    width:35px;
+
+    height:35px;
+
     border:none;
+
     border-radius:50%;
+
     background:#c59b5f;
+
     color:white;
+
+    font-size:1.2rem;
+
     cursor:pointer;
-    font-size:18px;
+
 }
+
 
 .quantidade button:hover{
+
     background:#a67c43;
+
 }
+
 
 .numero{
-    min-width:25px;
+
+    min-width:30px;
+
     text-align:center;
+
     font-weight:bold;
+
 }
 
-/* REMOVER */
+
+/* =========================
+   REMOVER
+========================= */
 
 .remover{
+
     border:none;
+
     background:#b83232;
+
     color:white;
-    padding:8px 12px;
-    border-radius:8px;
+
+    padding:10px 15px;
+
+    border-radius:20px;
+
     cursor:pointer;
+
 }
+
 
 .remover:hover{
+
     background:#8f2525;
+
 }
 
-/* RESUMO */
+
+/* =========================
+   TOTAL
+========================= */
 
 .resumo{
-    margin-top:30px;
+
+    background:#2b2118;
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
     text-align:right;
+
+    margin-top:30px;
+
 }
+
 
 .resumo h2{
-    font-family:'Cinzel',serif;
-    color:#3a2d1f;
+
+    font-family:'Cinzel', serif;
+
+    margin-bottom:10px;
+
 }
+
 
 .total{
-    font-size:1.8rem;
-    color:#2d7a32;
+
+    font-size:2rem;
+
+    color:#d8b274;
+
     font-weight:bold;
-    margin:10px 0 20px;
+
 }
 
-/* BOTÕES */
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
 
 .btn{
-    border:none;
+
     padding:14px 25px;
+
+    border:none;
+
     border-radius:30px;
+
     background:#c59b5f;
+
     color:white;
-    cursor:pointer;
+
     font-size:1rem;
+
+    cursor:pointer;
+
     text-decoration:none;
+
     display:inline-block;
-    transition:.3s;
+
 }
+
 
 .btn:hover{
+
     background:#a67c43;
-    transform:scale(1.03);
+
 }
 
-/* CARRINHO VAZIO */
+
+/* =========================
+   CARRINHO VAZIO
+========================= */
 
 .vazio{
+
     text-align:center;
+
+    background:white;
+
     padding:60px 20px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
 }
+
 
 .vazio h2{
-    font-family:'Cinzel',serif;
+
+    font-family:'Cinzel', serif;
+
     margin-bottom:15px;
+
+    color:#3a2d1f;
+
 }
+
 
 .vazio p{
-    color:#777;
+
     margin-bottom:25px;
+
 }
 
-/* RESPONSIVO */
+
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media(max-width:700px){
 
-    .produto{
-        flex-wrap:wrap;
+    .item{
+
+        flex-direction:column;
+
+        text-align:center;
+
     }
 
-    .produto img{
-        width:80px;
-        height:110px;
+
+    .botoes{
+
+        flex-direction:column;
+
     }
 
-    .produto-info{
-        min-width:calc(100% - 120px);
-    }
 
-    .quantidade{
-        margin-left:100px;
-    }
+    .resumo{
 
-    .remover{
-        margin-left:auto;
+        text-align:center;
+
     }
 
 }
@@ -235,6 +393,7 @@ header h1{
 </style>
 
 </head>
+
 
 <body>
 
@@ -245,23 +404,63 @@ header h1{
         🛒 Seu Carrinho
     </h1>
 
+    <p>
+        Biblioteca Livski
+    </p>
+
 </header>
 
 
 <div class="container">
 
-    <a
-        href="index.html"
-        class="voltar">
-
-        ← Voltar para a Biblioteca
-
-    </a>
+    <div id="listaCarrinho"></div>
 
 
     <div
-        class="carrinho"
-        id="carrinho">
+        id="resumo"
+        style="display:none;">
+
+        <div class="resumo">
+
+            <h2>
+                Resumo da compra
+            </h2>
+
+            <p>
+                Total:
+            </p>
+
+            <div
+                class="total"
+                id="total">
+
+                R$ 0,00
+
+            </div>
+
+        </div>
+
+
+        <div class="botoes">
+
+            <a
+                href="index.html#catalogo"
+                class="btn">
+
+                ← Continuar comprando
+
+            </a>
+
+
+            <button
+                class="btn"
+                onclick="finalizarCompra()">
+
+                Finalizar compra
+
+            </button>
+
+        </div>
 
     </div>
 
@@ -270,38 +469,24 @@ header h1{
 
 <script>
 
-/* PEGAR CARRINHO */
+/* =========================
+   PEGAR CARRINHO
+========================= */
 
-let carrinho =
-    JSON.parse(
+function pegarCarrinho(){
+
+    return JSON.parse(
         localStorage.getItem("carrinhoLivski")
     ) || [];
-
-
-/* ELEMENTO */
-
-const elementoCarrinho =
-    document.getElementById("carrinho");
-
-
-/* FORMATAR DINHEIRO */
-
-function dinheiro(valor){
-
-    return valor.toLocaleString(
-        "pt-BR",
-        {
-            style:"currency",
-            currency:"BRL"
-        }
-    );
 
 }
 
 
-/* SALVAR */
+/* =========================
+   SALVAR CARRINHO
+========================= */
 
-function salvar(){
+function salvarCarrinho(carrinho){
 
     localStorage.setItem(
         "carrinhoLivski",
@@ -311,13 +496,36 @@ function salvar(){
 }
 
 
-/* RENDERIZAR */
+/* =========================
+   MOSTRAR CARRINHO
+========================= */
 
-function renderizar(){
+function mostrarCarrinho(){
+
+    const carrinho =
+    pegarCarrinho();
+
+
+    const lista =
+    document.getElementById(
+        "listaCarrinho"
+    );
+
+
+    const resumo =
+    document.getElementById(
+        "resumo"
+    );
+
+
+    lista.innerHTML = "";
+
+
+    /* CARRINHO VAZIO */
 
     if(carrinho.length === 0){
 
-        elementoCarrinho.innerHTML = `
+        lista.innerHTML = `
 
             <div class="vazio">
 
@@ -326,7 +534,7 @@ function renderizar(){
                 </h2>
 
                 <p>
-                    Parece que você ainda não escolheu nenhum livro.
+                    Você ainda não adicionou nenhum livro.
                 </p>
 
                 <a
@@ -341,80 +549,119 @@ function renderizar(){
 
         `;
 
+
+        resumo.style.display =
+        "none";
+
+
         return;
 
     }
 
 
-    let html = "";
+    resumo.style.display =
+    "block";
+
 
     let total = 0;
 
 
-    carrinho.forEach((produto,index) => {
+    /* CRIAR CADA LIVRO */
+
+    carrinho.forEach(
+        (livro,index) => {
+
 
         const subtotal =
-            produto.preco *
-            produto.quantidade;
+        livro.preco *
+        livro.quantidade;
+
 
         total += subtotal;
 
 
-        html += `
+        lista.innerHTML += `
 
-            <div class="produto">
+            <div class="item">
 
                 <img
-                    src="${imagemLivro(produto.nome)}"
-                    alt="${produto.nome}">
+                    src="${livro.imagem}"
+                    alt="${livro.nome}">
 
-                <div class="produto-info">
 
-                    <h3>
-                        ${produto.nome}
-                    </h3>
+                <div class="info">
 
-                    <p class="autor">
-                        ${produto.autor}
-                    </p>
+                    <h2>
+                        ${livro.nome}
+                    </h2>
 
-                    <p class="preco">
-                        ${dinheiro(produto.preco)}
-                    </p>
+                    <div class="autor">
+                        ${livro.autor}
+                    </div>
+
+                    <div class="preco">
+
+                        R$ ${livro.preco
+                        .toFixed(2)
+                        .replace(".",",")}
+
+                    </div>
+
+
+                    <div class="quantidade">
+
+                        <button
+                            onclick="diminuir(${index})">
+
+                            −
+
+                        </button>
+
+
+                        <span class="numero">
+
+                            ${livro.quantidade}
+
+                        </span>
+
+
+                        <button
+                            onclick="aumentar(${index})">
+
+                            +
+
+                        </button>
+
+                    </div>
 
                 </div>
 
 
-                <div class="quantidade">
+                <div>
+
+                    <p style="margin-bottom:10px;">
+
+                        Subtotal:
+                        <strong>
+
+                            R$ ${subtotal
+                            .toFixed(2)
+                            .replace(".",",")}
+
+                        </strong>
+
+                    </p>
+
 
                     <button
-                        onclick="diminuir(${index})">
+                        class="remover"
+                        onclick="remover(${index})">
 
-                        −
-
-                    </button>
-
-                    <span class="numero">
-                        ${produto.quantidade}
-                    </span>
-
-                    <button
-                        onclick="aumentar(${index})">
-
-                        +
+                        Remover
 
                     </button>
 
                 </div>
-
-
-                <button
-                    class="remover"
-                    onclick="remover(${index})">
-
-                    Remover
-
-                </button>
 
             </div>
 
@@ -423,85 +670,53 @@ function renderizar(){
     });
 
 
-    html += `
+    document.getElementById(
+        "total"
+    ).textContent =
 
-        <div class="resumo">
+        "R$ " +
 
-            <h2>
-                Resumo do pedido
-            </h2>
-
-            <div class="total">
-                Total: ${dinheiro(total)}
-            </div>
-
-            <button
-                class="btn"
-                onclick="finalizar()">
-
-                Finalizar pedido
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    elementoCarrinho.innerHTML = html;
+        total
+        .toFixed(2)
+        .replace(".",",");
 
 }
 
 
-/* IMAGENS */
-
-function imagemLivro(nome){
-
-    const imagens = {
-
-        "Crime e Castigo":
-            "imagens/crime e castigo.jpg",
-
-        "A Hora da Estrela":
-            "imagens/a hora da estrela.jpg",
-
-        "Dom Casmurro":
-            "imagens/dom casmurro.jpg",
-
-        "Oração para Desaparecer":
-            "imagens/oração para desaparecer.jpg",
-
-        "Guerra e Paz":
-            "imagens/guerra e paz.jpg",
-
-        "Capitães da Areia":
-            "imagens/capitães da areia.png"
-
-    };
-
-    return imagens[nome] || "";
-
-}
-
-
-/* AUMENTAR */
+/* =========================
+   AUMENTAR
+========================= */
 
 function aumentar(index){
 
+    let carrinho =
+    pegarCarrinho();
+
+
     carrinho[index].quantidade++;
 
-    salvar();
 
-    renderizar();
+    salvarCarrinho(carrinho);
+
+
+    mostrarCarrinho();
 
 }
 
 
-/* DIMINUIR */
+/* =========================
+   DIMINUIR
+========================= */
 
 function diminuir(index){
 
-    if(carrinho[index].quantidade > 1){
+    let carrinho =
+    pegarCarrinho();
+
+
+    if(
+        carrinho[index].quantidade > 1
+    ){
 
         carrinho[index].quantidade--;
 
@@ -511,42 +726,57 @@ function diminuir(index){
 
     }
 
-    salvar();
 
-    renderizar();
+    salvarCarrinho(carrinho);
+
+
+    mostrarCarrinho();
 
 }
 
 
-/* REMOVER */
+/* =========================
+   REMOVER
+========================= */
 
 function remover(index){
 
+    let carrinho =
+    pegarCarrinho();
+
+
     carrinho.splice(index,1);
 
-    salvar();
 
-    renderizar();
+    salvarCarrinho(carrinho);
+
+
+    mostrarCarrinho();
 
 }
 
 
-/* FINALIZAR */
+/* =========================
+   FINALIZAR
+========================= */
 
-function finalizar(){
+function finalizarCompra(){
 
     alert(
-        "Pedido finalizado com sucesso! Obrigado por visitar a Biblioteca Livski."
+        "Compra finalizada! Obrigado por visitar a Biblioteca Livski."
     );
 
 }
 
 
-/* INICIAR */
+/* =========================
+   INICIAR
+========================= */
 
-renderizar();
+mostrarCarrinho();
 
 </script>
+
 
 </body>
 
