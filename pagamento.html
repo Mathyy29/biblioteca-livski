@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Pagamento - Biblioteca Livski</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f5f1ea;
+
+    color:#222;
+
+    min-height:100vh;
+
+}
+
+header{
+
+    background:#1b1b1b;
+
+    color:white;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+header h1{
+
+    font-family:'Cinzel',serif;
+
+    color:#c59b5f;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+/* RESUMO */
+
+.resumo{
+
+    background:#2b2118;
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+}
+
+.resumo h2{
+
+    font-family:'Cinzel',serif;
+
+    color:#d9b878;
+
+    margin-bottom:25px;
+
+}
+
+.produto{
+
+    border-bottom:1px solid #5b4939;
+
+    padding:15px 0;
+
+}
+
+.produto:last-child{
+
+    border-bottom:none;
+
+}
+
+.total{
+
+    margin-top:25px;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+    color:#d9b878;
+
+}
+
+/* PAGAMENTO */
+
+.pagamento{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+.pagamento h2{
+
+    font-family:'Cinzel',serif;
+
+    color:#3a2d1f;
+
+    margin-bottom:25px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:500;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-family:'Poppins',sans-serif;
+
+    outline:none;
+
+}
+
+input:focus,
+select:focus{
+
+    border-color:#c59b5f;
+
+}
+
+.linha{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#c59b5f;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.btn:hover{
+
+    background:#a67c43;
+
+    transform:scale(1.02);
+
+}
+
+.voltar{
+
+    background:#777;
+
+    margin-top:10px;
+
+}
+
+.voltar:hover{
+
+    background:#555;
+
+}
+
+/* SUCESSO */
+
+.sucesso{
+
+    display:none;
+
+    text-align:center;
+
+    background:white;
+
+    padding:60px 30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+.sucesso h2{
+
+    font-family:'Cinzel',serif;
+
+    color:#2d7a32;
+
+    margin-bottom:15px;
+
+}
+
+.sucesso p{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:750px){
+
+    .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .linha{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>
+        Biblioteca Livski
+    </h1>
+
+</header>
+
+
+<div class="container" id="areaCompra">
+
+
+    <!-- RESUMO -->
+
+    <div class="resumo">
+
+        <h2>
+            Resumo do pedido
+        </h2>
+
+        <div id="produtos"></div>
+
+        <div
+            class="total"
+            id="total">
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGAMENTO -->
+
+    <div class="pagamento">
+
+        <h2>
+            Finalizar compra
+        </h2>
+
+        <form id="formPagamento">
+
+
+            <label>
+                Nome completo
+            </label>
+
+            <input
+                type="text"
+                placeholder="Digite seu nome"
+                required>
+
+
+            <label>
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                placeholder="seuemail@email.com"
+                required>
+
+
+            <label>
+                Forma de pagamento
+            </label>
+
+            <select required>
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option>
+                    Cartão de crédito
+                </option>
+
+                <option>
+                    Cartão de débito
+                </option>
+
+                <option>
+                    PIX
+                </option>
+
+                <option>
+                    Boleto
+                </option>
+
+            </select>
+
+
+            <label>
+                Número do cartão
+            </label>
+
+            <input
+                type="text"
+                maxlength="19"
+                placeholder="0000 0000 0000 0000">
+
+
+            <div class="linha">
+
+                <div>
+
+                    <label>
+                        Validade
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="MM/AA">
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        CVV
+                    </label>
+
+                    <input
+                        type="text"
+                        maxlength="3"
+                        placeholder="000">
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn">
+
+                Confirmar pagamento
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn voltar"
+                onclick="voltarCarrinho()">
+
+                ← Voltar ao carrinho
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- COMPRA FINALIZADA -->
+
+<div
+    class="container"
+    id="areaSucesso"
+    style="display:none;">
+
+    <div class="sucesso"
+         style="display:block;">
+
+        <h2>
+            ✓ Compra realizada!
+        </h2>
+
+        <p>
+            Seu pedido foi registrado com sucesso.
+        </p>
+
+        <p>
+            Esta é uma página de pagamento
+            <strong>fictícia</strong> criada para
+            demonstração escolar.
+        </p>
+
+        <button
+            class="btn"
+            onclick="voltarInicio()">
+
+            Voltar para a Biblioteca
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* PEGAR CARRINHO */
+
+let carrinho = JSON.parse(
+    localStorage.getItem("carrinhoLivski")
+) || [];
+
+
+/* FORMATAR PREÇO */
+
+function formatarPreco(valor){
+
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            style:"currency",
+            currency:"BRL"
+        }
+    );
+
+}
+
+
+/* MOSTRAR PRODUTOS */
+
+function mostrarProdutos(){
+
+    const produtos =
+        document.getElementById("produtos");
+
+    const totalElemento =
+        document.getElementById("total");
+
+
+    produtos.innerHTML = "";
+
+
+    let total = 0;
+
+
+    carrinho.forEach(function(livro){
+
+        const subtotal =
+            livro.preco * livro.quantidade;
+
+        total += subtotal;
+
+
+        produtos.innerHTML += `
+
+            <div class="produto">
+
+                <strong>
+                    ${livro.nome}
+                </strong>
+
+                <br>
+
+                Quantidade:
+                ${livro.quantidade}
+
+                <br>
+
+                ${formatarPreco(subtotal)}
+
+            </div>
+
+        `;
+
+    });
+
+
+    totalElemento.innerHTML =
+        "Total: " + formatarPreco(total);
+
+}
+
+
+/* FORMULÁRIO */
+
+document
+.getElementById("formPagamento")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    /*
+       NÃO existe pagamento real.
+       É somente uma simulação para o projeto.
+    */
+
+
+    localStorage.removeItem(
+        "carrinhoLivski"
+    );
+
+
+    document.getElementById(
+        "areaCompra"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "areaSucesso"
+    ).style.display = "grid";
+
+});
+
+
+/* VOLTAR PARA CARRINHO */
+
+function voltarCarrinho(){
+
+    window.location.href =
+        "carrinho.html";
+
+}
+
+
+/* VOLTAR PARA INDEX */
+
+function voltarInicio(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* MOSTRAR */
+
+mostrarProdutos();
+
+</script>
+
+</body>
+
+</html>
