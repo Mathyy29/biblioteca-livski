@@ -243,6 +243,111 @@ section{
     font-weight:bold;
 }
 
+
+/* FAQ */
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    margin-bottom:15px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.faq-question{
+    width:100%;
+    padding:20px;
+    border:none;
+    background:white;
+    text-align:left;
+    font-family:'Poppins', sans-serif;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#3a2d1f;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question span{
+    font-size:1.5rem;
+    color:#c59b5f;
+    transition:0.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    padding:0 20px;
+    line-height:1.7;
+    transition:0.4s ease;
+    color:#555;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+    padding:0 20px 20px;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+
+/* SAC */
+
+.sac{
+    background:#2b2118;
+    color:white;
+    border-radius:20px;
+    padding:50px;
+    max-width:900px;
+    margin:auto;
+}
+
+.sac .section-title{
+    color:white;
+}
+
+.sac-info{
+    text-align:center;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.sac-form{
+    display:grid;
+    gap:15px;
+}
+
+.sac-form input,
+.sac-form textarea,
+.sac-form select{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-family:'Poppins', sans-serif;
+    font-size:1rem;
+}
+
+.sac-form textarea{
+    height:140px;
+    resize:none;
+}
+
+.sac-form .btn{
+    width:fit-content;
+    margin:auto;
+}
+
+
 /* CONTATO */
 
 .contato{
@@ -258,6 +363,7 @@ section{
     font-size:1.1rem;
 }
 
+
 /* FOOTER */
 
 footer{
@@ -267,6 +373,9 @@ footer{
     padding:20px;
     margin-top:50px;
 }
+
+
+/* RESPONSIVIDADE */
 
 @media(max-width:900px){
 
@@ -280,8 +389,30 @@ footer{
 
 }
 
+@media(max-width:600px){
+
+    nav ul{
+        gap:12px;
+        flex-wrap:wrap;
+    }
+
+    nav a{
+        font-size:0.9rem;
+    }
+
+    .sac{
+        padding:30px 20px;
+    }
+
+    .section-title{
+        font-size:2.2rem;
+    }
+
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="loader">
@@ -289,6 +420,7 @@ footer{
 </div>
 
 <header>
+
     <h1>Biblioteca Livski</h1>
 
     <p>
@@ -297,16 +429,32 @@ footer{
     </p>
 
     <a href="#catalogo" class="btn">Explorar Livros</a>
+
 </header>
 
+
 <nav>
+
     <ul>
+
         <li><a href="#sobre">Sobre</a></li>
+
         <li><a href="#atracoes">Atrações</a></li>
+
         <li><a href="#catalogo">Catálogo</a></li>
+
+        <li><a href="#faq">FAQ</a></li>
+
+        <li><a href="#sac">SAC</a></li>
+
         <li><a href="#contato">Contato</a></li>
+
     </ul>
+
 </nav>
+
+
+<!-- SOBRE -->
 
 <section id="sobre">
 
@@ -317,10 +465,11 @@ footer{
         <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200">
 
         <div>
+
             <p>
                 A Biblioteca Livski nasceu com o sonho de tornar a literatura clássica acessível para todos.
                 Aqui você encontra obras de Fiódor Dostoiévski, Clarice Lispector, Machado de Assis,
-                Jorge Amado, Liev Tolstói e muitos outros autores consagrados. 
+                Jorge Amado, Liev Tolstói e muitos outros autores consagrados.
             </p>
 
             <br>
@@ -329,11 +478,15 @@ footer{
                 Nosso diferencial está nos preços acessíveis, no ambiente aconchegante e nas experiências
                 culturais que oferecemos aos leitores. (Trabalho escolar sem fins comerciais)
             </p>
+
         </div>
 
     </div>
 
 </section>
+
+
+<!-- ATRAÇÕES -->
 
 <section id="atracoes">
 
@@ -342,52 +495,78 @@ footer{
     <div class="cards">
 
         <div class="card">
+
             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200">
 
             <div class="card-content">
+
                 <h3>Lanchonete Literária</h3>
+
                 <p>
                     Cafés especiais, doces artesanais e um ambiente tranquilo para leitura.
                 </p>
+
             </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200">
 
             <div class="card-content">
+
                 <h3>Mesas para Leitura</h3>
+
                 <p>
                     Espaços silenciosos e confortáveis para estudar ou aproveitar um bom livro.
                 </p>
+
             </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200">
 
             <div class="card-content">
+
                 <h3>Mesas Privadas</h3>
+
                 <p>
                     Salas privativas com serviço de mesa, tomadas, internet e reservas por hora.
                 </p>
+
             </div>
+
         </div>
 
+
         <div class="card">
+
             <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200">
 
             <div class="card-content">
+
                 <h3>Clube do Livro</h3>
+
                 <p>
                     Discussões literárias semanais, encontros culturais e debates sobre clássicos.
                 </p>
+
             </div>
+
         </div>
 
     </div>
 
 </section>
+
+
+<!-- CATÁLOGO -->
 
 <section id="catalogo">
 
@@ -395,107 +574,445 @@ footer{
 
     <div class="catalogo">
 
+
         <div class="livro">
+
             <img src="imagens/crime e castigo.jpg">
 
             <div class="livro-info">
+
                 <h3>Crime e Castigo</h3>
+
                 <p>Fiódor Dostoiévski</p>
+
                 <div class="preco">R$ 34,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
+
         <div class="livro">
+
             <img src="imagens/a hora da estrela.jpg">
 
             <div class="livro-info">
+
                 <h3>A Hora da Estrela</h3>
+
                 <p>Clarice Lispector</p>
+
                 <div class="preco">R$ 24,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
+
         <div class="livro">
+
             <img src="imagens/dom casmurro.jpg">
 
             <div class="livro-info">
+
                 <h3>Dom Casmurro</h3>
+
                 <p>Machado de Assis</p>
+
                 <div class="preco">R$ 19,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
+
         <div class="livro">
+
             <img src="imagens/oração para desaparecer.jpg">
 
             <div class="livro-info">
+
                 <h3>Oração para desaparecer</h3>
+
                 <p>Socorro Acioli</p>
+
                 <div class="preco">R$ 34,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
+
         <div class="livro">
+
             <img src="imagens/guerra e paz.jpg">
 
             <div class="livro-info">
+
                 <h3>Guerra e Paz</h3>
+
                 <p>Liev Tolstói</p>
+
                 <div class="preco">R$ 44,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
+
         <div class="livro">
+
             <img src="imagens/capitães da areia.png">
 
             <div class="livro-info">
+
                 <h3>Capitães da Areia</h3>
+
                 <p>Jorge Amado</p>
+
                 <div class="preco">R$ 28,90</div>
+
                 <button class="btn">Comprar</button>
+
             </div>
+
         </div>
 
     </div>
 
 </section>
 
+
+<!-- FAQ -->
+
+<section id="faq">
+
+    <h2 class="section-title">Perguntas Frequentes</h2>
+
+    <div class="faq">
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Quais livros estão disponíveis?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    A Biblioteca Livski possui diversos clássicos brasileiros e estrangeiros,
+                    incluindo obras de Machado de Assis, Clarice Lispector, Dostoiévski,
+                    Tolstói e Jorge Amado.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Como posso comprar um livro?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Escolha o livro desejado no catálogo e clique no botão "Comprar".
+                    Como este é um projeto escolar, o botão representa apenas uma demonstração.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                A biblioteca possui Clube do Livro?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Sim! O Clube do Livro Livski promove encontros, discussões literárias
+                    e debates sobre grandes obras da literatura.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                É possível reservar uma mesa?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Sim. As mesas privadas podem ser reservadas por hora, proporcionando
+                    um espaço tranquilo para estudos, leitura e trabalhos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Qual é o horário de funcionamento?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    A Biblioteca Livski funciona de segunda a sábado,
+                    das 08h às 22h.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                A biblioteca possui lanchonete?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Sim! A Lanchonete Literária oferece cafés, doces e um ambiente
+                    agradável para os leitores.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SAC -->
+
+<section id="sac">
+
+    <div class="sac">
+
+        <h2 class="section-title">SAC — Atendimento</h2>
+
+        <div class="sac-info">
+
+            <p>
+                Precisa de ajuda? Entre em contato com a equipe da Biblioteca Livski
+                através do formulário abaixo.
+            </p>
+
+            <p>
+                Envie sua dúvida, sugestão ou solicitação.
+            </p>
+
+        </div>
+
+
+        <form class="sac-form" id="sacForm">
+
+            <input
+                type="text"
+                placeholder="Seu nome"
+                required
+            >
+
+
+            <input
+                type="email"
+                placeholder="Seu e-mail"
+                required
+            >
+
+
+            <select required>
+
+                <option value="">Selecione o assunto</option>
+
+                <option>Dúvida sobre livros</option>
+
+                <option>Compra</option>
+
+                <option>Reserva de mesa</option>
+
+                <option>Clube do Livro</option>
+
+                <option>Sugestão</option>
+
+                <option>Reclamação</option>
+
+                <option>Outro</option>
+
+            </select>
+
+
+            <textarea
+                placeholder="Digite sua mensagem..."
+                required
+            ></textarea>
+
+
+            <button type="submit" class="btn">
+                Enviar mensagem
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+
 <section id="contato">
 
     <div class="contato">
 
-        <h2 class="section-title" style="color:white;">Contato</h2>
+        <h2 class="section-title" style="color:white;">
+            Contato
+        </h2>
 
         <p>📍 Rua das Letras, 245 - Centro</p>
+
         <p>📞 (12) 99999-9999</p>
+
         <p>📧 contato@bibliotecalivski.com</p>
+
         <p>🕒 Segunda à Sábado — 08h às 22h</p>
 
     </div>
 
 </section>
 
+
 <footer>
+
     © 2026 Biblioteca Livski — Todos os direitos reservados.
+
 </footer>
 
+
 <script>
+
+/* EFEITO DOS BOTÕES */
 
 const botoes = document.querySelectorAll(".btn");
 
 botoes.forEach(botao => {
+
     botao.addEventListener("mouseenter", () => {
-        botao.style.boxShadow = "0 0 20px rgba(197,155,95,0.8)";
+
+        botao.style.boxShadow =
+        "0 0 20px rgba(197,155,95,0.8)";
+
     });
 
     botao.addEventListener("mouseleave", () => {
+
         botao.style.boxShadow = "none";
+
     });
+
+});
+
+
+/* FAQ */
+
+const perguntas =
+document.querySelectorAll(".faq-question");
+
+perguntas.forEach(pergunta => {
+
+    pergunta.addEventListener("click", () => {
+
+        const item = pergunta.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(outroItem => {
+
+            if(outroItem !== item){
+
+                outroItem.classList.remove("active");
+
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* SAC */
+
+const sacForm =
+document.getElementById("sacForm");
+
+sacForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    alert(
+        "Mensagem enviada com sucesso!\n\n" +
+        "Obrigado por entrar em contato com a Biblioteca Livski."
+    );
+
+    sacForm.reset();
+
 });
 
 </script>
