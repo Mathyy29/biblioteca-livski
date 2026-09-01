@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carrinho - Biblioteca Livski</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f5f1ea;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    background:#1b1b1b;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1{
+    font-family:'Cinzel', serif;
+    color:#c59b5f;
+}
+
+/* CARRINHO */
+
+.container{
+    max-width:1000px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.voltar{
+    display:inline-block;
+    margin-bottom:30px;
+    color:#3a2d1f;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.voltar:hover{
+    color:#c59b5f;
+}
+
+.titulo{
+    font-family:'Cinzel', serif;
+    color:#3a2d1f;
+    margin-bottom:30px;
+    font-size:2.5rem;
+}
+
+.item{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.item img{
+    width:100px;
+    height:130px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.item-info{
+    flex:1;
+}
+
+.item-info h3{
+    margin-bottom:5px;
+    color:#3a2d1f;
+}
+
+.preco{
+    color:#2d7a32;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.quantidade{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+}
+
+.quantidade button{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:50%;
+    background:#c59b5f;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.quantidade button:hover{
+    background:#a67c43;
+}
+
+.quantidade span{
+    font-weight:bold;
+    min-width:20px;
+    text-align:center;
+}
+
+.remover{
+    background:#8b2e2e !important;
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.remover:hover{
+    background:#6d2020 !important;
+}
+
+/* TOTAL */
+
+.resumo{
+    background:#2b2118;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:right;
+    margin-top:30px;
+}
+
+.resumo h2{
+    margin-bottom:20px;
+}
+
+.total{
+    font-size:1.5rem;
+    color:#c59b5f;
+    font-weight:bold;
+}
+
+.finalizar{
+    margin-top:20px;
+    padding:14px 30px;
+    border:none;
+    background:#c59b5f;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+.finalizar:hover{
+    background:#a67c43;
+}
+
+/* CARRINHO VAZIO */
+
+.vazio{
+    background:white;
+    padding:50px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.vazio p{
+    margin-bottom:20px;
+}
+
+.btn-voltar{
+    display:inline-block;
+    padding:12px 25px;
+    background:#c59b5f;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+@media(max-width:700px){
+
+    .item{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .item-info{
+        width:100%;
+    }
+
+    .resumo{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Biblioteca Livski</h1>
+
+</header>
+
+
+<div class="container">
+
+    <a href="index.html" class="voltar">
+        ← Voltar para a biblioteca
+    </a>
+
+    <h2 class="titulo">
+        Meu Carrinho 🛒
+    </h2>
+
+    <div id="carrinho"></div>
+
+</div>
+
+
+<script>
+
+function carregarCarrinho(){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const container =
+    document.getElementById("carrinho");
+
+    if(carrinho.length === 0){
+
+        container.innerHTML = `
+
+            <div class="vazio">
+
+                <h2>Seu carrinho está vazio 📚</h2>
+
+                <p>
+                    Você ainda não adicionou nenhum livro.
+                </p>
+
+                <a href="index.html" class="btn-voltar">
+                    Ver livros
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    let html = "";
+
+    let total = 0;
+
+
+    carrinho.forEach((livro, index) => {
+
+        let subtotal =
+        livro.preco * livro.quantidade;
+
+        total += subtotal;
+
+
+        html += `
+
+            <div class="item">
+
+                <img src="${livro.imagem}" alt="${livro.nome}">
+
+                <div class="item-info">
+
+                    <h3>${livro.nome}</h3>
+
+                    <p>${livro.autor}</p>
+
+                    <div class="preco">
+                        R$ ${livro.preco.toFixed(2).replace('.',',')}
+                    </div>
+
+
+                    <div class="quantidade">
+
+                        <button onclick="diminuir(${index})">
+                            −
+                        </button>
+
+                        <span>
+                            ${livro.quantidade}
+                        </span>
+
+                        <button onclick="aumentar(${index})">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Subtotal:
+                        <strong>
+                            R$ ${subtotal.toFixed(2).replace('.',',')}
+                        </strong>
+                    </p>
+
+                    <br>
+
+                    <button
+                        class="remover"
+                        onclick="remover(${index})"
+                    >
+                        Remover
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    html += `
+
+        <div class="resumo">
+
+            <h2>
+                Total:
+                <span class="total">
+                    R$ ${total.toFixed(2).replace('.',',')}
+                </span>
+            </h2>
+
+            <button
+                class="finalizar"
+                onclick="finalizarCompra()"
+            >
+                Finalizar compra
+            </button>
+
+        </div>
+
+    `;
+
+
+    container.innerHTML = html;
+
+}
+
+
+/* AUMENTAR */
+
+function aumentar(index){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    carrinho[index].quantidade++;
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+    carregarCarrinho();
+
+}
+
+
+/* DIMINUIR */
+
+function diminuir(index){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    if(carrinho[index].quantidade > 1){
+
+        carrinho[index].quantidade--;
+
+    }else{
+
+        carrinho.splice(index,1);
+
+    }
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+    carregarCarrinho();
+
+}
+
+
+/* REMOVER */
+
+function remover(index){
+
+    let carrinho =
+    JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    carrinho.splice(index,1);
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+    carregarCarrinho();
+
+}
+
+
+/* FINALIZAR */
+
+function finalizarCompra(){
+
+    alert(
+        "Obrigado pela sua compra! 📚\n\n" +
+        "Esta é uma demonstração do projeto escolar."
+    );
+
+}
+
+
+/* CARREGAR */
+
+carregarCarrinho();
+
+</script>
+
+</body>
+</html>
