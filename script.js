@@ -1,19 +1,41 @@
 /* =========================
-   MENU DE 3 BARRINHAS
+   MENU
 ========================= */
 
-const menuBtn = document.getElementById("menuBtn");
+const menuBtn =
+    document.getElementById("menuBtn");
 
-const menuLateral = document.getElementById("menuLateral");
+const menuLateral =
+    document.getElementById("menuLateral");
 
 
-if (menuBtn && menuLateral) {
+if(menuBtn && menuLateral){
 
-    menuBtn.addEventListener("click", function() {
+    menuBtn.addEventListener(
+        "click",
+        function(){
 
-        menuLateral.classList.toggle("aberto");
+            menuLateral.classList.toggle("aberto");
 
-    });
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        function(event){
+
+            if(
+                !menuLateral.contains(event.target) &&
+                !menuBtn.contains(event.target)
+            ){
+
+                menuLateral.classList.remove("aberto");
+
+            }
+
+        }
+    );
 
 }
 
@@ -28,23 +50,33 @@ let carrinho = JSON.parse(
 
 
 /* =========================
-   CONTADOR DO CARRINHO
+   CONTADOR
 ========================= */
 
-function atualizarContador() {
+function atualizarContador(){
 
     const contador =
-        document.getElementById("contadorCarrinho");
+        document.getElementById(
+            "contadorCarrinho"
+        );
 
-    if (!contador) return;
+
+    if(!contador){
+
+        return;
+
+    }
+
 
     let total = 0;
 
-    carrinho.forEach(function(livro) {
+
+    carrinho.forEach(function(livro){
 
         total += livro.quantidade;
 
     });
+
 
     contador.textContent = total;
 
@@ -52,72 +84,104 @@ function atualizarContador() {
 
 
 /* =========================
-   ADICIONAR LIVRO
+   COMPRAR
 ========================= */
 
-document.querySelectorAll(".comprar").forEach(function(botao) {
+document
+    .querySelectorAll(".comprar")
+    .forEach(function(botao){
 
-    botao.addEventListener("click", function() {
+        botao.addEventListener(
+            "click",
+            function(){
 
-        const nome =
-            botao.dataset.nome;
+                const nome =
+                    botao.dataset.nome;
 
-        const autor =
-            botao.dataset.autor;
+                const autor =
+                    botao.dataset.autor;
 
-        const preco =
-            parseFloat(botao.dataset.preco);
+                const preco =
+                    parseFloat(
+                        botao.dataset.preco
+                    );
 
-        const imagem =
-            botao.dataset.imagem;
-
-
-        const livroExistente =
-            carrinho.find(
-                livro => livro.nome === nome
-            );
-
-
-        if (livroExistente) {
-
-            livroExistente.quantidade++;
-
-        } else {
-
-            carrinho.push({
-
-                nome: nome,
-
-                autor: autor,
-
-                preco: preco,
-
-                imagem: imagem,
-
-                quantidade: 1
-
-            });
-
-        }
+                const imagem =
+                    botao.dataset.imagem;
 
 
-        localStorage.setItem(
-            "carrinhoLivski",
-            JSON.stringify(carrinho)
-        );
+                const livroExistente =
+                    carrinho.find(
+                        livro =>
+                        livro.nome === nome
+                    );
 
 
-        atualizarContador();
+                if(livroExistente){
+
+                    livroExistente.quantidade++;
+
+                }
+
+                else{
+
+                    carrinho.push({
+
+                        nome:nome,
+
+                        autor:autor,
+
+                        preco:preco,
+
+                        imagem:imagem,
+
+                        quantidade:1
+
+                    });
+
+                }
 
 
-        alert(
-            nome +
-            " foi adicionado ao carrinho!"
+                localStorage.setItem(
+                    "carrinhoLivski",
+                    JSON.stringify(carrinho)
+                );
+
+
+                atualizarContador();
+
+
+                /* Pequena confirmação */
+
+                const textoOriginal =
+                    botao.textContent;
+
+
+                botao.textContent =
+                    "Adicionado ✓";
+
+
+                botao.style.background =
+                    "#2d7a32";
+
+
+                setTimeout(
+                    function(){
+
+                        botao.textContent =
+                            textoOriginal;
+
+                        botao.style.background =
+                            "#c59b5f";
+
+                    },
+                    1200
+                );
+
+            }
         );
 
     });
-
-});
 
 
 /* =========================
@@ -126,16 +190,19 @@ document.querySelectorAll(".comprar").forEach(function(botao) {
 
 document
     .querySelectorAll(".faq-question")
-    .forEach(function(pergunta) {
+    .forEach(function(pergunta){
 
         pergunta.addEventListener(
             "click",
-            function() {
+            function(){
 
                 const resposta =
                     pergunta.nextElementSibling;
 
-                resposta.classList.toggle("ativo");
+
+                resposta.classList.toggle(
+                    "ativo"
+                );
 
             }
         );
@@ -148,22 +215,24 @@ document
 ========================= */
 
 const formSAC =
-    document.getElementById("formSAC");
+    document.getElementById(
+        "formSAC"
+    );
 
 
-if (formSAC) {
+if(formSAC){
 
     formSAC.addEventListener(
         "submit",
-        function(event) {
+        function(event){
 
             event.preventDefault();
 
+
             alert(
-                "Mensagem enviada com sucesso! " +
-                "Obrigado por entrar em contato " +
-                "com a Biblioteca Livski."
+                "Mensagem enviada com sucesso! Obrigado por entrar em contato com a Biblioteca Livski."
             );
+
 
             this.reset();
 
