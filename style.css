@@ -1035,26 +1035,40 @@ footer{
 }
 
 
-/* Cada tópico */
+/* Retângulos de cada tópico */
 
 .politica details {
     background: #fff;
-    border-radius: 10px;
-    margin-bottom: 14px;
+    border: 2px solid #8b5e3c;
+    border-radius: 12px;
+
+    margin-bottom: 16px;
+
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s ease;
 }
 
 
-/* Título clicável */
+/* Efeito ao passar o mouse */
+
+.politica details:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+
+/* Título */
 
 .politica summary {
     position: relative;
+
     cursor: pointer;
     list-style: none;
 
-    padding: 18px 50px 18px 20px;
+    padding: 18px 50px 18px 22px;
 
     font-family: 'Cinzel', serif;
     font-size: 17px;
@@ -1062,18 +1076,18 @@ footer{
 
     color: #333;
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 
-/* Remove a setinha padrão */
+/* Remove a seta padrão */
 
 .politica summary::-webkit-details-marker {
     display: none;
 }
 
 
-/* Seta */
+/* Sinal + */
 
 .politica summary::after {
     content: "+";
@@ -1086,15 +1100,14 @@ footer{
 
     font-family: Arial, sans-serif;
     font-size: 24px;
-    font-weight: 300;
 
     color: #8b5e3c;
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 
-/* Quando estiver aberto */
+/* Tópico aberto */
 
 .politica details[open] summary {
     color: #8b5e3c;
@@ -1111,42 +1124,45 @@ footer{
 
 .politica details p {
     margin: 0;
-    padding: 0 20px 20px;
+
+    padding: 5px 22px 22px;
 
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+
     line-height: 1.7;
 
     color: #555;
 }
 
 
-/* Efeito ao passar o mouse */
+/* Efeito no título */
 
 .politica summary:hover {
     background: #faf7f4;
 }
 
 
-/* Responsivo */
+/* Celular */
 
 @media (max-width: 600px) {
-
-    .faixa-privacidade {
-        height: 8px;
-    }
 
     .politica {
         margin: 20px 10px;
     }
 
+    .politica details {
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+
     .politica summary {
         font-size: 15px;
-        padding: 16px 45px 16px 16px;
+        padding: 16px 45px 16px 18px;
     }
 
     .politica details p {
-        padding: 0 16px 18px;
+        padding: 5px 18px 18px;
         font-size: 13px;
     }
 
